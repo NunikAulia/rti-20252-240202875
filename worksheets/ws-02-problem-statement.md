@@ -67,33 +67,33 @@ Masalah riset yang layak harus memenuhi 5 kriteria:
 PROBLEM STATEMENT BUILDER
 
 Domain & Konteks
-  Domain   : ____________________
-  Konteks  : ____________________
+  Domain   : E-Commerce / Sistem Informasi Bisnis / UMKM
+  Konteks  : Pemanfaatan e-commerce oleh UMKM bermitra Grab di Kabupaten Garut untuk meningkatkan omzet
 
 System Context
-  Input       : ____________________
-  Process     : ____________________
-  Output      : ____________________
-  Outcome     : ____________________
-  Constraints : ____________________
-  Stakeholders: ____________________
+  Input       : Data kuesioner UMKM mitra Grab mengenai manfaat yang dirasakan, kapabilitas teknologi, tingkat adopsi e-commerce, dan peningkatan omzet
+  Process     : Pengolahan data menggunakan metode kuantitatif dengan SEM-PLS
+  Output      : Hasil analisis pengaruh e-commerce terhadap peningkatan omzet UMKM
+  Outcome     : Diketahui faktor e-commerce yang paling berpengaruh terhadap peningkatan omzet UMKM
+  Constraints : Sampel terbatas 100 responden, lokasi hanya di Kabupaten Garut, dan data berbasis persepsi responden
+  Stakeholders: Pelaku UMKM, Grab, konsumen, peneliti, dan pihak pembina UMKM
 
 Fenomena → Problem
-  Fenomena yang diamati             : ____________________
-  Gejala (symptom) yang terukur     : ____________________
-  Masalah yang didiagnosis          : ____________________
-  Masalah riset (researchable)      : ____________________
-  Variabel yang terukur             : ____________________
+  Fenomena yang diamati             : Penggunaan e-commerce pada UMKM meningkat, tetapi peningkatan omzet antar pelaku UMKM tidak selalu sama
+  Gejala (symptom) yang terukur     : Masih ada UMKM yang kesulitan memahami strategi pemasaran digital dan belum mengalami peningkatan omzet optimal
+  Masalah yang didiagnosis          : Pemanfaatan e-commerce belum optimal karena perbedaan kapabilitas teknologi, manfaat yang dirasakan, dan tingkat adopsi
+  Masalah riset (researchable)      : Belum diketahui seberapa besar pengaruh manfaat yang dirasakan, kapabilitas teknologi, dan tingkat adopsi e-commerce terhadap peningkatan omzet UMKM bermitra Grab
+  Variabel yang terukur             : Manfaat yang dirasakan, kapabilitas teknologi, tingkat adopsi, dan peningkatan omzet
 
 Problem Quality Check
-  [ ] Clarity — Apakah satu orang membaca akan paham?
-  [ ] Measurability — Apakah ada metrik kuantitatif?
-  [ ] Relevance — Apakah penting untuk domain?
-  [ ] Testability — Apakah bisa gagal?
-  [ ] Impact — Apakah ada kontribusi jika terjawab?
+  [ ☑ ] Clarity — Apakah satu orang membaca akan paham?
+  [ ☑ ] Measurability — Apakah ada metrik kuantitatif?
+  [ ☑ ] Relevance — Apakah penting untuk domain?
+  [ ☑ ] Testability — Apakah bisa gagal?
+  [ ☑ ] Impact — Apakah ada kontribusi jika terjawab?
 
 Problem Statement (1 paragraf):
-  ____________________
+    Pada UMKM yang bermitra dengan Grab di Kabupaten Garut, penggunaan e-commerce telah menjadi bagian penting dalam aktivitas pemasaran dan penjualan. Namun, tidak semua UMKM memperoleh peningkatan omzet yang sama karena masih terdapat kendala dalam memahami strategi pemasaran digital, memanfaatkan teknologi, dan mengadopsi e-commerce secara optimal. Oleh karena itu, penelitian ini bertujuan untuk menganalisis pengaruh manfaat yang dirasakan, kapabilitas teknologi, dan tingkat adopsi e-commerce terhadap peningkatan omzet UMKM, sehingga dapat diketahui faktor yang paling berpengaruh dalam mendukung peningkatan kinerja usaha.
 ```
 
 ---
@@ -102,18 +102,18 @@ Problem Statement (1 paragraf):
 
 Pilih satu topik di bidang TI yang diminati. Transformasikan melalui 5 tahap Problem Formation Model.
 
-**Topik awal:** ________________________________________
+**Topik awal:** Pengaruh e-commerce terhadap peningkatan omzet UMKM bermitra Grab
 
 | Tahap | Hasil |
 |-------|-------|
-| Reality | *Contoh: Aplikasi e-commerce sering ditinggalkan saat checkout* |
-| Observed Issue (Symptom) | *Contoh: Bounce rate checkout 68%* |
-| Diagnosed Problem (Root Cause) | |
-| Researchable Problem | |
-| Measurable Variable | |
+| Reality | UMKM bermitra Grab menggunakan e-commerce untuk menjangkau pasar yang lebih luas dan meningkatkan penjualan |
+| Observed Issue (Symptom) | Tidak semua UMKM mengalami peningkatan omzet yang sama meskipun telah menggunakan e-commerce |
+| Diagnosed Problem (Root Cause) | Kapabilitas teknologi, manfaat yang dirasakan, dan tingkat adopsi e-commerce pada tiap UMKM berbeda-beda |
+| Researchable Problem | Belum diketahui seberapa besar pengaruh dimensi e-commerce terhadap peningkatan omzet UMKM bermitra Grab di Kabupaten Garut |
+| Measurable Variable | Manfaat yang dirasakan, kapabilitas teknologi, tingkat adopsi, peningkatan omzet |
 
-**Apakah terjebak solution-first thinking?** [ ] Ya / [ ] Tidak
-> Jika ya, kembali ke tahap mana? ________________________
+**Apakah terjebak solution-first thinking?** [ ] Ya / [ ☑ ] Tidak
+> Jika ya, kembali ke tahap mana? Karena masalah dirumuskan dari fenomena penggunaan e-commerce dan kondisi omzet UMKM, bukan langsung dari solusi atau metode. 
 
 ---
 
@@ -123,14 +123,14 @@ Gambarkan konteks sistem dari masalah riset di Latihan 1.
 
 | Komponen | Deskripsi |
 |----------|----------|
-| Input | *Contoh: Request HTTP dari browser pengguna* |
-| Process | |
-| Output | |
-| Outcome | |
-| Constraints | |
-| Stakeholders | |
+| Input | Data primer dari kuesioner 100 responden UMKM mitra Grab |
+| Process | Pengolahan data menggunakan pendekatan kuantitatif dan analisis SEM-PLS |
+| Output | Nilai pengaruh variabel e-commerce terhadap peningkatan omzet |
+| Outcome | Diperoleh bukti empiris tentang faktor yang memengaruhi peningkatan omzet UMKM |
+| Constraints | Sampel terbatas, wilayah penelitian hanya Garut, data berasal dari persepsi responden |
+| Stakeholders | Pelaku UMKM, Grab, konsumen, akademisi, dan pembina UMKM |
 
-**Komponen mana yang paling relevan dengan masalah riset?** _______________
+**Komponen mana yang paling relevan dengan masalah riset?** Process dan Constraints
 
 ---
 
@@ -140,17 +140,16 @@ Evaluasi problem statement yang sudah dibuat menggunakan 5 kriteria.
 
 | Kriteria | Skor (1-5) | Justifikasi |
 |----------|-----------|-------------|
-| Clarity | *Contoh: 4 — cukup jelas tapi perlu spesifikasi dataset* | |
-| Measurability | | |
-| Relevance | | |
-| Testability | | |
-| Impact | | |
+| Clarity | 4 | Masalah sudah jelas, namun masih bisa diperjelas pada batasan wilayah dan karakteristik UMKM |
+| Measurability | 5 | Variabel diukur secara kuantitatif melalui indikator dan dianalisis dengan SEM-PLS |
+| Relevance | 5 | Sangat relevan terhadap perkembangan UMKM digital dan e-commerce |
+| Testability | 5 | Dapat diuji dengan hipotesis, kuesioner, dan analisis statistik |
+| Impact | 4 | Memberikan manfaat praktis bagi UMKM, tetapi ruang lingkupnya masih lokal |
 
-**Skor total:** _____ / 25
+**Skor total:** 23 / 25
 
 **Problem statement versi final (1 paragraf):**
-> ___________________________________________________
-> ___________________________________________________
+> Penggunaan e-commerce pada UMKM bermitra Grab di Kabupaten Garut telah menjadi strategi penting dalam memperluas pasar dan meningkatkan penjualan, namun peningkatan omzet yang diperoleh tiap UMKM belum merata. Kondisi ini diduga disebabkan oleh perbedaan manfaat yang dirasakan, kapabilitas teknologi, dan tingkat adopsi e-commerce di antara pelaku UMKM. Oleh karena itu, penelitian ini bertujuan untuk menganalisis pengaruh ketiga faktor tersebut terhadap peningkatan omzet UMKM menggunakan pendekatan kuantitatif, sehingga dapat diketahui faktor yang paling dominan dalam mendukung peningkatan kinerja usaha. 
 
 ---
 
@@ -159,5 +158,4 @@ Evaluasi problem statement yang sudah dibuat menggunakan 5 kriteria.
 > Bandingkan "masalah" yang biasa ditemui saat coding (bug, error) dengan masalah riset. Apa perbedaan fundamental dalam cara mendefinisikan dan mendekati keduanya?
 
 **Jawaban:**
-> ___________________________________________________
-> ___________________________________________________
+> Masalah dalam coding biasanya berupa bug atau error yang penyebabnya relatif langsung, misalnya kesalahan sintaks, logika program, atau integrasi sistem, sehingga fokus penyelesaiannya adalah memperbaiki agar sistem berjalan normal. Sedangkan masalah riset lebih berfokus pada fenomena yang belum sepenuhnya dipahami dan perlu dibuktikan secara ilmiah. Dalam riset, masalah harus dirumuskan secara sistematis, memiliki variabel yang terukur, dapat diuji, dan menghasilkan temuan yang dapat dipertanggungjawabkan. Jadi, coding lebih menekankan perbaikan teknis, sedangkan riset menekankan pembuktian ilmiah terhadap hubungan atau pengaruh antarvariabel. Berdasarkan WS-02, masalah riset memang harus melalui tahapan fenomena, gejala, akar masalah, hingga variabel terukur, bukan langsung ke solusi.
