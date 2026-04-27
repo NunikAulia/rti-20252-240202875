@@ -89,7 +89,7 @@ Gap 1: [Jenis: performance / method / data / context]
   Bukti        : Sebagian besar penelitian hanya menggunakan data UMKM di satu kota/daerah
   Signifikansi : Membatasi generalisasi hasil penelitian terhadap UMKM secara nasional
 
-Gap 2: [Jenis: ____]
+Gap 2: [Jenis: Context Gap]
   Deskripsi    : Penelitian belum banyak dilakukan pada berbagai konteks wilayah yang berbeda
   Bukti        : Studi hanya fokus pada daerah seperti Garut, Makassar, dan Padang
   Signifikansi : Perbedaan kondisi ekonomi dan teknologi tiap daerah dapat mempengaruhi hasil
@@ -130,10 +130,10 @@ Berdasarkan tabel di Latihan 1, identifikasi gap.
 
 | Jenis Gap | Ditemukan? | Gap Statement |
 |-----------|-----------|---------------|
-| Performance Gap | [ ] Ya / [ ☑ ] Tidak | *Contoh: Akurasi turun di bawah 80% untuk kelas minoritas* |
-| Method Gap | [ ☑ ] Ya / [ ] Tidak | |
-| Data Gap | [ ☑ ] Ya / [ ] Tidak | |
-| Context Gap | [ ☑ ] Ya / [ ] Tidak | |
+| Performance Gap | [ ] Ya / [ ☑ ] Tidak | Tidak ditemukan pengukuran performa karena sebagian besar penelitian tidak menguji akurasi AI dalam diagnosis secara langsung |
+| Method Gap | [ ☑ ] Ya / [ ] Tidak | Sebagian besar penelitian menggunakan metode kualitatif dan literature review, sehingga belum banyak penelitian empiris kuantitatif yang menguji penggunaan ChatGPT dalam self-diagnosis |
+| Data Gap | [ ☑ ] Ya / [ ] Tidak | Data yang digunakan masih terbatas, seperti sampel kecil atau hanya berbasis literatur, sehingga kurang representatif |
+| Context Gap | [ ☑ ] Ya / [ ] Tidak | Belum ada penelitian yang secara spesifik mengkaji penggunaan ChatGPT dalam self-diagnosis BPD pada mahasiswa |
 
 **Gap utama yang dipilih:** Data Gap + Context Gap
 **Mengapa gap ini penting (bukan sekadar "belum ada yang meneliti")?**
