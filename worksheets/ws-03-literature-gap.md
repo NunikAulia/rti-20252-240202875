@@ -61,39 +61,44 @@ Membandingkan deep learning 2024 dengan decision tree sederhana tanpa justifikas
 ```
 LITERATURE MAPPING
 
-Topik      : ____________________
-Database   : ____________________
-Query      : ____________________
-Tahun      : ____________________
-Hasil awal : ____ paper → Screening → ____ paper final
+Topik      : Pengaruh E-Commerce terhadap Peningkatan Omzet UMKM
+Database   : Google Scholar
+Query      : "e-commerce UMKM omzet" AND "pengaruh e-commerce terhadap pendapatan UMKM"
+Tahun      : 2019–2025
+Hasil awal : 50 paper → Screening → ____ paper final
 
 Literature Matrix (concept-centric):
 
 | Study | Tahun | Method | Data | Result | Limitation |
 |-------|-------|--------|------|--------|------------|
-|       |       |        |      |        |            |
+| Nurlaela & Syakinah   | 2025  | SEM-PLS      | 100 UMKM Garut          | E-commerce signifikan meningkatkan omzet | Hanya 1 daerah                 |
+| Ikhsan & Hasan        | 2020  | Kuantitatif  | UMKM Makassar           | Penjualan meningkat                      | Sampel terbatas                |
+| Rianty & Rahayu       | 2021  | Kuantitatif  | UMKM mitra Gojek        | Pendapatan meningkat                     | Fokus pandemi                  |
+| Gustina et al.        | 2022  | Statistik    | UMKM Padang             | Dampak positif e-commerce                | Variabel terbatas              |
+| Fathimah              | 2019  | Regresi      | UMKM Indonesia          | Adopsi meningkatkan kinerja usaha        | Tidak bahas teknologi detail   |
 
 Pola yang ditemukan:
-  Metode dominan     : ____________________
-  Dataset umum       : ____________________
-  Limitasi berulang  : ____________________
+  Metode dominan     : Kuantitatif (SEM-PLS, regresi, statistik)
+  Dataset umum       : UMKM pada wilayah tertentu (lokal)
+  Limitasi berulang  : Sampel kecil, wilayah terbatas, variabel belum kompleks
 
 GAP IDENTIFICATION
 
 Gap 1: [Jenis: performance / method / data / context]
-  Deskripsi    : ____________________
-  Bukti        : ____________________
-  Signifikansi : ____________________
+  Deskripsi    : Dataset penelitian terbatas pada wilayah tertentu sehingga hasil belum representatif secara luas
+  Bukti        : Sebagian besar penelitian hanya menggunakan data UMKM di satu kota/daerah
+  Signifikansi : Membatasi generalisasi hasil penelitian terhadap UMKM secara nasional
 
 Gap 2: [Jenis: ____]
-  Deskripsi    : ____________________
-  Bukti        : ____________________
-  Signifikansi : ____________________
+  Deskripsi    : Penelitian belum banyak dilakukan pada berbagai konteks wilayah yang berbeda
+  Bukti        : Studi hanya fokus pada daerah seperti Garut, Makassar, dan Padang
+  Signifikansi : Perbedaan kondisi ekonomi dan teknologi tiap daerah dapat mempengaruhi hasil
 
 Baseline Selection:
 | Baseline | Relevansi | Representatif | Source |
 |----------|-----------|---------------|--------|
-|          |           |               |        |
+| SEM-PLS        | Digunakan untuk analisis pengaruh e-commerce     | Banyak digunakan dalam studi UMKM    | Nurlaela (2025)        |
+| Regresi Linier | Mengukur hubungan variabel ekonomi               | Metode umum dalam penelitian ekonomi | Fathimah (2019)        |
 ```
 
 ---
@@ -102,20 +107,20 @@ Baseline Selection:
 
 Gunakan topik riset dari WS-02. Cari minimal 5 paper relevan menggunakan Google Scholar atau database lain.
 
-**Topik riset:** ________________________________________
-**Query pencarian:** ____________________________________
-**Database:** ___________________________________________
+**Topik riset:** Pengaruh E-Commerce terhadap peningkatan omzet UMKM
+**Query pencarian:** e-commerce UMKM omzet" AND "pendapatan UMKM
+**Database:** Google Scholar
 
 | # | Study | Tahun | Method | Dataset | Result | Limitasi |
 |---|-------|-------|--------|---------|--------|----------|
-| 1 | *Contoh: Rahman et al.* | *2023* | *CNN* | *ImageNet subset* | *Acc 91%* | *Hanya 3 kelas* |
-| 2 | | | | | | |
-| 3 | | | | | | |
-| 4 | | | | | | |
-| 5 | | | | | | |
+| 1 | *Nurlaela & Syakinah* | *2025* | *SEM-PLS* | *100 UMKM Garut* | *Signifikan* | *Wilayah terbatas* |
+| 2 | *Ikhsan & Hasan*| *2020* | *Kuantitatif* | *UMKM Makassar* | *Meningkat* |*Sampel kecil* |
+| 3 | *Rianty & Rahayu* | *2021* | *Kuantitatif* | *UMKM Gojek* | *Naik* | *Fokus pandemi* |
+| 4 | *Gustina et al.* | *2022* | *Statistik* | *UMKM Padang* | *Positif* | *Variabel sedikit* |
+| 5 | *Fathimah* | *2019* | *Regresi* | *UMKM Indonesia* | *Kinerja naik* | *Tidak detail* |
 
-**Pola yang terlihat — Metode dominan:** ___________________
-**Limitasi yang berulang:** ______________________________
+**Pola yang terlihat — Metode dominan:** Metode kuantitatif
+**Limitasi yang berulang:** Wilayah terbatas dan sampel kecil
 
 ---
 
@@ -125,14 +130,14 @@ Berdasarkan tabel di Latihan 1, identifikasi gap.
 
 | Jenis Gap | Ditemukan? | Gap Statement |
 |-----------|-----------|---------------|
-| Performance Gap | [ ] Ya / [ ] Tidak | *Contoh: Akurasi turun di bawah 80% untuk kelas minoritas* |
-| Method Gap | [ ] Ya / [ ] Tidak | |
-| Data Gap | [ ] Ya / [ ] Tidak | |
-| Context Gap | [ ] Ya / [ ] Tidak | |
+| Performance Gap | [ ] Ya / [ ☑ ] Tidak | *Contoh: Akurasi turun di bawah 80% untuk kelas minoritas* |
+| Method Gap | [ ☑ ] Ya / [ ] Tidak | |
+| Data Gap | [ ☑ ] Ya / [ ] Tidak | |
+| Context Gap | [ ☑ ] Ya / [ ] Tidak | |
 
-**Gap utama yang dipilih:** _____________________________
+**Gap utama yang dipilih:** Data Gap + Context Gap
 **Mengapa gap ini penting (bukan sekadar "belum ada yang meneliti")?**
-> ___________________________________________________
+> Gap ini penting karena keterbatasan data dan konteks menyebabkan hasil penelitian tidak dapat digeneralisasi secara luas. Dengan memperluas dataset dan konteks penelitian, hasil yang diperoleh akan lebih akurat dan relevan untuk berbagai kondisi UMKM.
 
 ---
 
@@ -142,11 +147,11 @@ Pilih 2 baseline dari literatur yang sudah dibaca.
 
 | # | Baseline | Mengapa Relevan | Mengapa Representatif | Apakah SOTA? | Sumber |
 |---|----------|----------------|----------------------|-------------|--------|
-| 1 | *Contoh: RF + TF-IDF* | *Task sama: klasifikasi teks* | *Dipakai 6 dari 10 paper* | *Bukan, tapi common practice* | *Lee et al., 2022* |
-| 2 | | | | | |
+| 1 | SEM-PLS | Analisis hubungan variabel | Banyak digunakan | bukan | Nurlaela (2025) |
+| 2 | Regresi Linier | Analisis pengaruh ekonomi | Metode umum | Tidak | Fathimah (2019) |
 
-**Apakah pemilihan baseline ini bisa dianggap straw man?** [ ] Ya / [ ] Tidak
-> Justifikasi: ________________________________________
+**Apakah pemilihan baseline ini bisa dianggap straw man?** [ ] Ya / [ ☑ ] Tidak
+> Justifikasi:  Baseline yang digunakan merupakan metode umum dan relevan sehingga perbandingan tetap adil dan tidak bias.
 
 ---
 
@@ -155,5 +160,5 @@ Pilih 2 baseline dari literatur yang sudah dibaca.
 > Apa perbedaan antara "belum ada yang meneliti ini" (klaim tanpa bukti) dengan research gap yang valid? Bagaimana cara membuktikan bahwa sebuah gap benar-benar ada?
 
 **Jawaban:**
-> ___________________________________________________
-> ___________________________________________________
+> "belum ada yang meneliti ini” merupakan klaim tanpa bukti karena tidak didukung oleh pencarian literatur yang sistematis. Sedangkan research gap yang valid harus didasarkan pada analisis beberapa penelitian sebelumnya yang menunjukkan adanya keterbatasan atau kekurangan tertentu.
+> Cara membuktikan adanya gap adalah dengan melakukan pencarian literatur secara sistematis, menggunakan database terpercaya, mendokumentasikan query pencarian, serta menunjukkan pola dan keterbatasan yang berulang dari penelitian yang telah ada. Dengan demikian, gap yang ditemukan dapat dipertanggungjawabkan secara ilmiah.
