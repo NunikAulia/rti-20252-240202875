@@ -70,31 +70,36 @@ RQ-CONTRIBUTION-HYPOTHESIS
 Gap Statement  : ____________________
 
 Research Question:
-  Tipe         : [ ] Comparison  [ ] Improvement  [ ] Exploratory
-  Formulasi    : ____________________
-  Variabel IV  : ____________________
-  Variabel DV  : ____________________
-  Metrik       : ____________________
-  Dataset      : ____________________
-  Baseline     : ____________________
+  Tipe         : [ ] Comparison  [ ] Improvement  [ ✓ ] Exploratory
+  Formulasi    :  Apakah manfaat yang dirasakan, kapabilitas teknologi, dan tingkat adopsi e-commerce berpengaruh signifikan terhadap peningkatan omzet UMKM bermitra GRAB di Kabupaten Garut menggunakan metode SEM-PLS?
+  Variabel IV  : 1. Manfaat yang dirasakan
+                  2. Kapabilitas teknologi
+                  3. Tingkat adopsi e-commerce
+  Variabel DV  : Peningkatan omzet UMKM
+  Metrik       : R-Square, Path Coefficient, T-Statistic, P-Value, dan f-square
+  Dataset      : Data primer dari 100 responden UMKM bermitra GRAB di Kabupaten Garut
+  Baseline     : Penelitian terdahulu mengenai pengaruh e-commerce terhadap UMKM
 
 Quality Check RQ:
-  [ ] Variabel spesifik
-  [ ] Metrik jelas
-  [ ] Baseline ada
-  [ ] Konteks disebutkan
-  [ ] Memerlukan eksperimen (bukan hanya survei literatur)
+  [ ✓ ] Variabel spesifik
+  [ ✓ ] Metrik jelas
+  [ ✓ ] Baseline ada
+  [ ✓ ] Konteks disebutkan
+  [ ✓ ] Memerlukan eksperimen (bukan hanya survei literatur)
 
 Contribution Statement:
-  Apa yang baru diketahui : ____________________
-  Jenis kontribusi        : [ ] Improvement  [ ] Comparison  [ ] Novel approach
-  Gap yang diisi          : ____________________
+  Apa yang baru diketahui :   Penelitian ini menunjukkan bahwa penggunaan e-commerce memiliki pengaruh signifikan terhadap peningkatan omzet UMKM, terutama pada aspek kapabilitas teknologi.
+
+  Jenis kontribusi        : [ ] Improvement  [ ] Comparison  [ ✓ ] Novel approach
+  Gap yang diisi          :   Kurangnya penelitian spesifik mengenai pengaruh e-commerce terhadap peningkatan omzet UMKM mitra GRAB menggunakan metode SEM-PLS.
 
 Hypothesis Pair:
-  H₀ : ____________________
-  H₁ : ____________________
-  Threshold              : ____________________
-  Justifikasi threshold  : ____________________
+  H₀ :  Tidak terdapat pengaruh signifikan antara manfaat yang dirasakan, kapabilitas teknologi, dan tingkat adopsi e-commerce terhadap peningkatan omzet UMKM bermitra GRAB di Kabupaten Garut.
+
+  H₁ : Terdapat pengaruh signifikan antara manfaat yang dirasakan, kapabilitas teknologi, dan tingkat adopsi e-commerce terhadap peningkatan omzet UMKM bermitra GRAB di Kabupaten Garut.
+
+  Threshold              : P-Value < 0,05 dan T-Statistic > 1,96
+  Justifikasi threshold  :   Threshold tersebut merupakan standar umum pengujian signifikansi statistik pada metode SEM-PLS.
 ```
 
 ---
@@ -103,24 +108,25 @@ Hypothesis Pair:
 
 Gunakan gap yang ditemukan di WS-03. Transformasikan menjadi Research Question.
 
-**Gap dari WS-03:** ____________________________________
+**Gap dari WS-03:** Masih sedikit penelitian yang membahas pengaruh e-commerce terhadap peningkatan omzet UMKM mitra GRAB menggunakan pendekatan SEM-PLS.
 
 **RQ versi pertama (tulis bebas):**
-> ___________________________________________________
+> Bagaimana pengaruh e-commerce terhadap peningkatan omzet UMKM?
+
 
 **Evaluasi RQ:**
 
 | Komponen | Ada? | Isi |
 |----------|------|-----|
-| Metode spesifik | *Contoh: Ya — CNN vs RF* | |
-| Metrik terukur | | |
-| Baseline | | |
-| Dataset/konteks | | |
+| Metode spesifik | *Ya* | SEM-PLS |
+| Metrik terukur | *Ya* | R-Square, T-Statistic, P-Value |
+| Baseline | *Ya* | Penelitian terdahulu e-commerce UMKM |
+| Dataset/konteks | *Ya* | UMKM mitra GRAB Kabupaten Garut |
 
-**Tipe RQ:** [ ] Comparison / [ ] Improvement / [ ] Exploratory
+**Tipe RQ:** [ ] Comparison / [ ] Improvement / [ ✓ ] Exploratory
 
 **RQ versi revisi (setelah evaluasi):**
-> ___________________________________________________
+> Apakah manfaat yang dirasakan, kapabilitas teknologi, dan tingkat adopsi e-commerce berpengaruh signifikan terhadap peningkatan omzet UMKM bermitra GRAB di Kabupaten Garut menggunakan metode SEM-PLS?
 
 ---
 
@@ -130,14 +136,15 @@ Rumuskan pasangan hipotesis dari RQ di Latihan 1.
 
 | Komponen | Isi |
 |----------|-----|
-| H₀ | *Contoh: Tidak ada perbedaan signifikan F1-Score antara CNN dan RF pada dataset CIC-MalMem-2022* |
-| H₁ | |
-| Metrik | |
-| Threshold | |
-| Justifikasi threshold | |
+| H₀ | *Tidak ada pengaruh signifikan e-commerce terhadap peningkatan omzet UMKM* |
+| H₁ | *Ada pengaruh signifikan e-commerce terhadap peningkatan omzet UMKM* |
+| Metrik | *T-Statistic, P-Value, R-Square* |
+| Threshold | *P-Value < 0,05* |
+| Justifikasi threshold | *Digunakan sebagai standar signifikansi statistik dalam SEM-PLS* |
 
-**Apakah hipotesis ini falsifiable?** [ ] Ya / [ ] Tidak
-> Bagaimana cara membuktikannya salah? ___________________
+**Apakah hipotesis ini falsifiable?** [ ✓ ] Ya / [ ] Tidak
+> Bagaimana cara membuktikannya salah? Hipotesis dapat ditolak apabila hasil pengujian menunjukkan nilai P-Value > 0,05 atau nilai T-Statistic < 1,96.
+
 
 ---
 
@@ -147,15 +154,15 @@ Lengkapi rantai dari RQ hingga metode analisis.
 
 | Tahap | Isi |
 |-------|-----|
-| RQ | *Contoh: Apakah CNN menghasilkan F1-Score lebih tinggi dari RF...* |
-| Variable (IV) | *Contoh: Jenis algoritma (CNN vs RF)* |
-| Variable (DV) | |
-| Metric | |
-| Data source | |
-| Analysis method | |
+| RQ | *Apakah e-commerce berpengaruh terhadap peningkatan omzet UMKM mitra GRAB?* |
+| Variable (IV) | *Manfaat yang dirasakan, kapabilitas teknologi, tingkat adopsi* |
+| Variable (DV) | *Peningkatan omzet* |
+| Metric | *R-Square, Path Coefficient, T-Statistic, P-Value* |
+| Data source | *Kuesioner 100 responden UMKM mitra GRAB* |
+| Analysis method | *SEM-PLS* |
 
-**Apakah rantai lengkap?** [ ] Ya / [ ] Tidak
-> Jika tidak, tahap mana yang perlu direvisi? ______________
+**Apakah rantai lengkap?** [ ✓ ] Ya / [ ] Tidak
+> Jika tidak, tahap mana yang perlu direvisi? Tidak perlu revisi karena semua komponen sudah lengkap.
 
 ---
 
@@ -163,6 +170,10 @@ Lengkapi rantai dari RQ hingga metode analisis.
 
 > Ambil satu judul skripsi/paper yang pernah dibaca. Coba ekstrak RQ-nya. Apakah RQ tersebut memenuhi semua komponen (metode, metrik, baseline, konteks)? Jika tidak, apa yang hilang?
 
-**Judul:** _____________________________________________
-**RQ yang diekstrak:** __________________________________
-**Komponen yang hilang:** _______________________________
+**Judul:** Pengaruh E-Commerce Terhadap Peningkatan Omzet UMKM Bermitra Grab di Kabupaten Garut
+
+**RQ yang diekstrak:** Apakah penggunaan e-commerce berpengaruh signifikan terhadap peningkatan omzet UMKM bermitra GRAB di Kabupaten Garut?
+
+**Komponen yang hilang:** Tidak ada, karena penelitian sudah memiliki metode, metrik, variabel, dataset, dan analisis yang jelas.
+
+
