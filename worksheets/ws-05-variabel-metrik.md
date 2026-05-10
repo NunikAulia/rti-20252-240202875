@@ -66,19 +66,22 @@ Metrik harus ditentukan **sebelum** eksperimen. Memilih metrik setelah melihat d
 ```
 VARIABLE & METRIC DEFINITION
 
-Research Question: ____________________
+Research Question: Apakah manfaat yang dirasakan, kapabilitas teknologi, dan tingkat adopsi e-commerce berpengaruh signifikan terhadap peningkatan omzet UMKM bermitra GRAB di Kabupaten Garut menggunakan metode SEM-PLS?
 
 | Variabel | Tipe | Konsep | Metrik | Skala | Satuan | Cara Mengukur | Justifikasi |
 |----------|------|--------|--------|-------|--------|---------------|-------------|
-|          | IV   |        |        |       |        |               |             |
-|          | DV   |        |        |       |        |               |             |
-|          | CV   |        |        |       |        |               |             |
+| Manfaat yang dirasakan | IV | Persepsi manfaat penggunaan e-commerce | Skor kuesioner Likert | Ordinal | Skor | Menggunakan kuesioner skala Likert 1–5 | Mengukur sejauh mana UMKM merasakan manfaat e-commerce |
+| Kapabilitas teknologi | IV | Kemampuan penggunaan teknologi digital | Skor kuesioner Likert | Ordinal | Skor | Menggunakan kuesioner skala Likert 1–5 | Menilai kemampuan UMKM dalam menggunakan teknologi |
+| Tingkat adopsi e-commerce | IV | Tingkat penerapan e-commerce | Skor kuesioner Likert | Ordinal | Skor | Menggunakan kuesioner skala Likert 1–5 | Mengukur tingkat penggunaan e-commerce pada UMKM |
+| Peningkatan omzet | DV | Kenaikan pendapatan usaha | R-Square, Path Coefficient, T-Statistic, P-Value | Ratio | Nilai statistik | Analisis menggunakan SEM-PLS | Mengukur pengaruh variabel e-commerce terhadap omzet |
+| Lama usaha | CV | Pengalaman usaha | Lama usaha dalam tahun | Ratio | Tahun | Data identitas responden | Mengontrol pengaruh pengalaman usaha |
+| Pendidikan terakhir | CV | Tingkat pendidikan pelaku usaha | Jenjang pendidikan | Ordinal | Tingkat | Data identitas responden | Mengontrol pengaruh pendidikan terhadap penggunaan teknologi |
 
 Alignment Check:
   RQ → Concept → Variable → Metric → Data → Result
-  [ ] Setiap langkah terdokumentasi
-  [ ] Tidak ada "lompatan logis"
-  [ ] Metrik mengukur apa yang dimaksud (construct validity)
+  [ ✓ ] Setiap langkah terdokumentasi
+  [ ✓ ] Tidak ada "lompatan logis"
+  [ ✓ ] Metrik mengukur apa yang dimaksud (construct validity)
 ```
 
 ---
@@ -87,16 +90,19 @@ Alignment Check:
 
 Gunakan RQ dari WS-04. Definisikan variabel dan metriknya.
 
-**RQ:** __________________________________________________
+**RQ:** Apakah manfaat yang dirasakan, kapabilitas teknologi, dan tingkat adopsi e-commerce berpengaruh signifikan terhadap peningkatan omzet UMKM bermitra GRAB di Kabupaten Garut?
 
 | Variabel | Tipe | Konsep Abstrak | Metrik Konkret | Skala (NOIR) | Satuan |
 |----------|------|---------------|----------------|-------------|--------|
-| *Contoh: Jenis model* | *IV* | *Pendekatan klasifikasi* | *Categorical: CNN vs RF* | *Nominal* | *—* |
-| | DV | | | | |
-| | CV | | | | |
+| *Manfaat yang dirasakan* | *IV* | *Persepsi manfaat e-commerce* | *Skor Likert 1–5* | *Ordinal* | *Skor* |
+| *Kapabilitas teknologi*| *IV* | *Kemampuan teknologi digital* | *Skor Likert 1–5* | *Ordinal* | *Skor* |
+| *Tingkat adopsi e-commerce* | *IV* | *Tingkat penggunaan e-commerce* | *Skor Likert 1–5* | *Ordinal* | *Skor* |
+| *Peningkatan omzet* | *DV* | *Kenaikan pendapatan usaha* | *R-Square, T-Statistic, P-Value* | *Ratio* | *Nilai statistik* |
+| *Lama usaha* | *CV* | *Pengalaman menjalankan usaha* | *Lama usaha* | *Ratio* | *Tahun* |
+| *Pendidikan terakhir* | *CV* | *Tingkat pendidikan* | *Jenjang pendidikan* | *Ordinal* | *Tingkat* |
 
-**Apakah ada lompatan logis dalam rantai?** [ ] Ya / [ ] Tidak
-> Jika ya, di mana? ____________________________________
+**Apakah ada lompatan logis dalam rantai?** [ ] Ya / [ ✓ ] Tidak
+> Jika ya, di mana? Tidak ada, karena seluruh konsep abstrak sudah diterjemahkan menjadi variabel yang dapat diukur secara statistik.
 
 ---
 
@@ -106,15 +112,15 @@ Evaluasi metrik DV yang dipilih di Latihan 1 menggunakan 3 kriteria.
 
 | Kriteria | Skor (1-5) | Justifikasi |
 |----------|-----------|-------------|
-| Representative | *Contoh: 4 — F1-Score mewakili keseimbangan precision-recall* | |
-| Sensitive | | |
-| Feasible | | |
+| Representative | *5* | *Metrik SEM-PLS mampu merepresentasikan hubungan antar variabel penelitian* |
+| Sensitive | *4*| *Metrik cukup sensitif dalam mendeteksi perubahan pengaruh antar variabel* |
+| Feasible | *5* | *Data mudah diperoleh melalui penyebaran kuesioner kepada responden UMKM* |
 
-**Apakah perlu secondary metric?** [ ] Ya / [ ] Tidak
-> Jika ya, apa dan mengapa? _____________________________
+**Apakah perlu secondary metric?** [ ✓ ] Ya / [ ] Tidak
+> Jika ya, apa dan mengapa? Ya, menggunakan Cronbach Alpha dan Composite Reliability untuk mendukung validitas dan reliabilitas instrumen penelitian.
 
 **Contoh kasus ceiling effect untuk metrik ini:**
-> ___________________________________________________
+> Jika hampir seluruh responden memberikan skor sangat tinggi pada penggunaan e-commerce, maka variasi data menjadi kecil sehingga pengaruh antar variabel sulit dibedakan secara signifikan.
 
 ---
 
@@ -124,10 +130,10 @@ Bayangkan data yang akan dikumpulkan dari eksperimen. Evaluasi 4 dimensi kualita
 
 | Dimensi | Pertanyaan | Jawaban | Strategi Mitigasi |
 |---------|-----------|---------|------------------|
-| Completeness | *Apakah semua data point terkumpul?* | | |
-| Consistency | *Apakah ada kontradiksi internal?* | | |
-| Validity | *Apakah benar-benar mengukur yang dimaksud?* | | |
-| Representativeness | *Apakah sampel mewakili populasi target?* | | |
+| Completeness | *Apakah semua data point terkumpul?* | *Sebagian besar data lengkap* | *Memastikan seluruh kuesioner diisi lengkap sebelum analisis* |
+| Consistency | *Apakah ada kontradiksi internal?* | *Ada kemungkinan jawaban tidak konsisten* | *Melakukan pengecekan dan validasi data* |
+| Validity | *Apakah benar-benar mengukur yang dimaksud?* | *Ya, menggunakan indikator berdasarkan teori dan uji validitas* | *Menggunakan indikator variabel yang sesuai literatur* |
+| Representativeness | *Apakah sampel mewakili populasi target?* | *Ya, responden berasal dari UMKM mitra GRAB* | *Menggunakan teknik sampling sesuai rumus Slovin* |
 
 ---
 
@@ -136,5 +142,6 @@ Bayangkan data yang akan dikumpulkan dari eksperimen. Evaluasi 4 dimensi kualita
 > Mengapa memilih metrik setelah melihat data dianggap p-hacking? Apa bedanya dengan eksplorasi data yang sah?
 
 **Jawaban:**
-> ___________________________________________________
-> ___________________________________________________
+> Memilih metrik setelah melihat data dianggap p-hacking karena peneliti dapat memilih hasil yang terlihat paling signifikan sehingga kesimpulan penelitian menjadi bias dan tidak objektif.
+
+> Berbeda dengan eksplorasi data yang sah, eksplorasi dilakukan untuk memahami pola data tanpa mengubah hipotesis utama atau memanipulasi hasil penelitian yang telah ditentukan sebelum eksperimen dilakukan.
