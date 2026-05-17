@@ -67,25 +67,25 @@ Jika variabel tidak bisa di-map ke komponen apapun → arsitektur perlu didesain
 ```
 SYSTEM-EXPERIMENT MAPPING
 
-Research Question: ____________________
+Research Question: Bagaimana pengaruh e-commerce terhadap peningkatan omzet UMKM yang bermitra dengan Grab?
 
 Variable → Component Mapping:
 | Variabel | Tipe | Komponen Sistem | Cara Manipulasi/Pengukuran |
 |----------|------|-----------------|---------------------------|
-|          | IV   |                 |                           |
-|          | DV   |                 |                           |
-|          | CV   |                 |                           |
+| E-commerce (manfaat, kapabilitas teknologi, adopsi)   | IV   | Modul kuesioner & input responden  | Mengubah indikator pada kuesioner             |
+| Peningkatan omzet UMKM                                 | DV   | Modul analisis SEM-PLS             | Mengukur nilai R-square, t-statistic, f-square |
+| Jumlah responden, metode SEM-PLS, objek penelitian     | CV   | Config penelitian                  | Dijaga tetap selama penelitian                |
 
 4 Prinsip Desain:
-  [ ] Traceability — Setiap komponen bisa ditelusuri ke variabel
-  [ ] Variable Isolation — IV bisa diubah tanpa mengubah CV
-  [ ] Measurement Integration — Pengukuran DV built-in
-  [ ] Reproducibility — Setup bisa direkonstruksi
+  [ ✓ ] Traceability — Setiap komponen bisa ditelusuri ke variabel
+  [ ✓ ] Variable Isolation — IV bisa diubah tanpa mengubah CV
+  [ ✓ ] Measurement Integration — Pengukuran DV built-in
+  [ ✓ ] Reproducibility — Setup bisa direkonstruksi
 
 Experimental Setup:
-  Input data     : ____________________
-  Parameter      : ____________________
-  Output format  : ____________________
+  Input data     : Data kuesioner 100 responden UMKM mitra Grab
+  Parameter      : Variabel e-commerce dan peningkatan omzet
+  Output format  : Nilai statistik SEM-PLS (R-square, f-square, t-statistic)
 ```
 
 ---
@@ -94,16 +94,16 @@ Experimental Setup:
 
 Gunakan RQ dan variabel dari WS-05. Petakan ke komponen sistem.
 
-**RQ:** __________________________________________________
+**RQ:** Bagaimana pengaruh e-commerce terhadap peningkatan omzet UMKM yang bermitra dengan Grab?
 
 | Variabel | Tipe | Komponen Sistem | Cara Manipulasi / Pengukuran |
 |----------|------|-----------------|---------------------------|
-| *Contoh: Jenis model* | *IV* | *Modul classifier (swap RF ↔ CNN)* | *Ganti config `model_type`* |
-| | DV | | |
-| | CV | | |
+| *E-commerce* | *IV* | *Modul kuesioner* | *Mengubah indikator pertanyaan* |
+| *Peningkatan omzet* | *DV* | *Modul analisis SEM-PLS* | *Mengukur hasil statistik* |
+| *Jumlah responden & metode penelitian* | *CV* | *Config penelitian* | *Dijaga tetap selama eksperimen* |
 
-**Apakah semua variabel bisa di-map?** [ ] Ya / [ ] Tidak
-> Jika tidak, komponen apa yang perlu ditambahkan? _________
+**Apakah semua variabel bisa di-map?** [ ✓ ] Ya / [ ] Tidak
+> Ya, karena seluruh variabel penelitian sudah memiliki komponen sistem masing-masing, baik untuk manipulasi variabel independen, pengukuran variabel dependen, maupun pengendalian variabel kontrol.
 
 ---
 
@@ -113,14 +113,14 @@ Evaluasi desain sistem terhadap 4 prinsip.
 
 | Prinsip | Status | Bukti / Penjelasan |
 |---------|--------|-------------------|
-| Traceability | *Contoh: ✅ — setiap modul punya label variabel* | |
-| Modularity | | |
-| Controllability | | |
-| Measurability | | |
+| Traceability | *✅* |  Setiap variabel memiliki komponen sistem yang jelas |
+| Modularity | *✅* | Variabel independen dapat diubah tanpa mengubah metode analisis |
+| Controllability | *✅* | Jumlah responden dan metode SEM-PLS dikontrol tetap |
+| Measurability | *✅* | Sistem menghasilkan output statistik otomatis |
 
-**Prinsip mana yang paling sulit dipenuhi?** _______________
+**Prinsip mana yang paling sulit dipenuhi?** Measurability
 **Strategi untuk mengatasinya:**
-> ___________________________________________________
+> Menggunakan software SmartPLS agar pengukuran otomatis, valid, dan reliabel.
 
 ---
 
@@ -130,14 +130,14 @@ Jika sistem memiliki 3 komponen utama, rencanakan ablation study.
 
 | Kondisi | Komponen A | Komponen B | Komponen C | Hasil yang Diharapkan |
 |---------|-----------|-----------|-----------|----------------------|
-| Full | *Contoh: ✅ CNN* | *Contoh: ✅ Temporal features* | *Contoh: ✅ Z-score norm* | *Baseline penuh* |
-| – A | ❌ (ganti RF) | ✅ | ✅ | |
-| – B | ✅ | ❌ (tanpa temporal) | ✅ | |
-| – C | ✅ | ✅ | ❌ (tanpa normalisasi) | |
+| Full | *✅ Manfaat yang dirasakan* | *✅ Kapabilitas teknologi* | *✅ Tingkat adopsi* | *Baseline penuh* |
+| – A | *❌ (tanpa manfaat yang dirasakan)* | *✅* | *✅* | *Pengaruh omzet sedikit menurun* |
+| – B | *✅* | *❌ (tanpa kapabilitas teknologi)*| *✅* | *Penurunan omzet paling besar* |
+| – C | *✅* | *✅* | *❌ (tanpa tingkat adopsi)* | *Pengaruh omzet sedikit menurun* |
 
-**Komponen mana yang diprediksi paling berkontribusi?** _____
+**Komponen mana yang diprediksi paling berkontribusi?** Kapabilitas teknologi
 **Mengapa?**
-> ___________________________________________________
+> Karena berdasarkan hasil penelitian, kapabilitas teknologi memiliki nilai f-square paling tinggi sehingga memberikan pengaruh paling besar terhadap peningkatan omzet UMKM.
 
 ---
 
@@ -146,5 +146,5 @@ Jika sistem memiliki 3 komponen utama, rencanakan ablation study.
 > Apa risiko jika sistem dibangun seperti produk (monolitik, fitur lengkap) lalu baru dilakukan eksperimen? Mengapa arsitektur modular penting untuk riset?
 
 **Jawaban:**
-> ___________________________________________________
-> ___________________________________________________
+> Jika sistem dibangun seperti produk monolitik lalu baru dilakukan eksperimen, maka variabel penelitian akan sulit dipisahkan sehingga hasil penelitian kurang valid dan sulit dianalisis.
+> Arsitektur modular penting dalam riset karena memudahkan isolasi variabel, mempermudah pengujian tiap komponen, dan membuat penelitian lebih reproducible.
