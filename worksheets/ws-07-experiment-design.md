@@ -68,36 +68,36 @@ Ancaman validitas harus diidentifikasi **sebelum** eksperimen dan mitigasinya di
 ```
 EXPERIMENT DESIGN
 
-Research Question : ____________________
-Hypothesis        : ____________________
-Tipe Eksperimen   : [ ] Comparison  [ ] Ablation  [ ] Parameter
+Research Question : Bagaimana pengaruh e-commerce terhadap peningkatan omzet UMKM yang bermitra dengan Grab?
+Hypothesis        : E-commerce berpengaruh signifikan terhadap peningkatan omzet UMKM yang bermitra dengan Grab.
+Tipe Eksperimen   : [ ✓ ] Comparison  [ ] Ablation  [ ] Parameter
 
 Kondisi Eksperimen:
 | Kondisi | Deskripsi | IV Value | CV Settings |
 |---------|-----------|----------|-------------|
-| Control |           |          |             |
-| Treatment |         |          |             |
+| Control   | UMKM dengan penggunaan e-commerce rendah    | Tingkat adopsi rendah      | Dataset sama, metode SEM-PLS, 100 responden |
+| Treatment | UMKM dengan penggunaan e-commerce tinggi    | Tingkat adopsi tinggi      | Dataset sama, metode SEM-PLS, 100 responden |
 
 Fairness Checklist:
-  [ ] Dataset identik untuk semua kondisi
-  [ ] Preprocessing setara
-  [ ] Tuning effort setara
-  [ ] Environment identik
-  [ ] Metrik evaluasi sama
+  [ ✓ ] Dataset identik untuk semua kondisi
+  [ ✓ ] Preprocessing setara
+  [ ✓ ] Tuning effort setara
+  [ ✓ ] Environment identik
+  [ ✓ ] Metrik evaluasi sama
 
 Threat Analysis:
 | Threat Type | Ancaman Spesifik | Mitigasi |
 |-------------|-----------------|----------|
-| Internal    |                 |          |
-| External    |                 |          |
-| Construct   |                 |          |
-| Conclusion  |                 |          |
+| Internal    | Bias jawaban responden | Menggunakan instrumen yang valid dan reliabel |
+| External    | Sampel hanya UMKM Grab di Garut | Memperluas wilayah dan jumlah sampel |
+| Construct   | Pertanyaan tidak mewakili variabel | Melakukan uji validitas dan reliabilitas |
+| Conclusion  | Jumlah sampel terbatas | Menggunakan SEM-PLS dan bootstrapping |
 
 Statistical Plan:
-  Uji statistik   : ____________________
-  Justifikasi      : ____________________
-  Alpha            : ____________________
-  Effect size min  : ____________________
+   Uji statistik   : SEM-PLS
+   Justifikasi     : Cocok untuk penelitian kuantitatif dengan variabel laten
+   Alpha           : 0,05
+   Effect size min : f-square > 0,02
 ```
 
 ---
@@ -106,13 +106,13 @@ Statistical Plan:
 
 Susun desain eksperimen berdasarkan RQ, variabel, dan sistem dari WS-04 sampai WS-06.
 
-**RQ:** __________________________________________________
-**Tipe eksperimen:** [ ] Comparison / [ ] Ablation / [ ] Parameter
+**RQ:** Bagaimana pengaruh e-commerce terhadap peningkatan omzet UMKM yang bermitra dengan Grab?
+**Tipe eksperimen:** [ ✓ ] Comparison / [ ] Ablation / [ ] Parameter
 
 | Kondisi | Deskripsi | IV Value | CV Settings |
 |---------|-----------|----------|-------------|
-| Control | *Contoh: RF baseline dari literatur* | *RF* | *Dataset X, 80:20 split, seed 42* |
-| Treatment | | | |
+| Control | *UMKM dengan penggunaan e-commerce rendah* | *Tingkat adopsi rendah* | *Dataset sama, metode SEM-PLS, 100 responden* |
+| Treatment | *UMKM dengan penggunaan e-commerce tinggi* | *Tingkat adopsi tinggi* | *Dataset sama, metode SEM-PLS, 100 responden* |
 
 ---
 
@@ -122,15 +122,14 @@ Evaluasi apakah desain eksperimen di Latihan 1 sudah fair.
 
 | Kriteria | Status | Detail |
 |----------|--------|--------|
-| Dataset identik | *Contoh: ✅ — sama-sama pakai CIC-MalMem-2022* | |
-| Preprocessing setara | | |
-| Tuning effort setara | | |
-| Environment identik | | |
-| Metrik evaluasi sama | | |
+| Dataset identik | *✅* | Sama-sama menggunakan data UMKM mitra Grab |
+| Preprocessing setara | *✅* | Data diproses dengan metode dan tahapan yang sama |
+| Tuning effort setara | *✅* | Analisis menggunakan konfigurasi SEM-PLS yang sama |
+| Environment identik | *✅* | Pengolahan data dilakukan pada software dan kondisi yang sama |
+| Metrik evaluasi sama | *✅* | Menggunakan R-square, f-square, dan t-statistic yang sama |
 
-**Ada yang tidak fair?** [ ] Ya / [ ] Tidak
-> Jika ya, bagaimana cara memperbaikinya? ________________
-
+**Ada yang tidak fair?** [ ] Ya / [ ✓ ] Tidak
+> Tidak ada, karena seluruh kondisi eksperimen menggunakan dataset, preprocessing, metode analisis, environment, dan metrik evaluasi yang sama sehingga perbandingan eksperimen sudah fair.
 ---
 
 ## Latihan 3 — Threat Analysis
@@ -139,14 +138,14 @@ Identifikasi ancaman validitas untuk desain eksperimen ini.
 
 | Threat Type | Ancaman Spesifik | Mitigasi |
 |-------------|-----------------|----------|
-| Internal | *Contoh: Data leakage antara train-test* | *Contoh: Gunakan stratified split, validasi tidak ada overlap* |
-| External | | |
-| Construct | | |
-| Conclusion | | |
+| Internal | *Bias jawaban responden pada kuesioner* | *Menggunakan instrumen yang valid dan reliabel* |
+| External | *Hasil penelitian hanya berlaku untuk UMKM Grab di Garut* | *Menambah wilayah dan jumlah responden* |
+| Construct | *Indikator pertanyaan tidak sesuai variabel penelitian* | *Melakukan uji validitas dan reliabilitas* |
+| Conclusion | *Jumlah sampel terbatas* | *Menggunakan SEM-PLS dan bootstrapping* |
 
-**Ancaman mana yang paling sulit dimitigasi?** _____________
+**Ancaman mana yang paling sulit dimitigasi?** External validity
 **Mengapa?**
-> ___________________________________________________
+> Karena penelitian hanya menggunakan sampel UMKM mitra Grab di Kabupaten Garut sehingga hasil penelitian belum tentu dapat digeneralisasikan ke daerah lain atau jenis UMKM yang berbeda.
 
 ---
 
@@ -155,6 +154,6 @@ Identifikasi ancaman validitas untuk desain eksperimen ini.
 > Sebuah paper melaporkan "metode kami mengalahkan semua baseline." Apa 3 pertanyaan pertama yang harus diajukan untuk mengevaluasi klaim ini?
 
 **Jawaban:**
-1. ___________________________________________________
-2. ___________________________________________________
-3. ___________________________________________________
+1. Apakah semua metode dibandingkan menggunakan dataset dan kondisi eksperimen yang sama?
+2. Apakah baseline yang digunakan merupakan metode yang valid dan relevan dari literatur sebelumnya?
+3. Apakah hasil pengujian didukung oleh analisis statistik dan metrik evaluasi yang valid?
