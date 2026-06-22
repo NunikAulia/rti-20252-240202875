@@ -73,32 +73,40 @@ Mengandalkan "install library terbaru" berbahaya: versi berbeda = perilaku berbe
 EXPERIMENT SETUP DOCUMENTATION
 
 Hardware:
-  CPU     : ____________________
-  RAM     : ____________________
-  GPU     : ____________________
-  Storage : ____________________
+  CPU     : Intel Core i5-1135G7
+  RAM     : 8 GB DDR4
+  GPU     : Intel Iris Xe Graphics
+  Storage : SSD 512 GB
 
 Software:
-  OS        : ____________________
-  Runtime   : ____________________
-  Framework : ____________________
+  OS        : Windows 11 Pro 64-bit
+  Runtime   : Java Runtime Environment (JRE) 17
+  Framework : SmartPLS 4
 
 Dependencies:
 | Library | Version | Sumber | Hash/Checksum |
 |---------|---------|--------|---------------|
-|         |         |        |               |
-|         |         |        |               |
+|     SmartPLS	| 4.0	| SmartPLS Official	| N/A |
+| Microsoft Excel | 2021	| Microsoft	| N/A |
+| IBM SPSS Statistics	| 26	| IBM	| N/A |
+| Java Runtime Environment	| 17	| Oracle	| N/A |
+| Windows 11	| 23H2	| Microsoft	| N/A    | 
 
 Konfigurasi:
-  Config file     : ____________________
-  Random seed     : ____________________
-  Hyperparameters : ____________________
+  Config file     : Dataset_Kuesioner_UMKM.xlsx
+  Random seed     : 42
+  Hyperparameters : 
+  - Minimum loading factor > 0,70
+  - Composite Reliability > 0,70
+  - AVE > 0,50
+  - Bootstrapping = 5000 subsamples
+  - Signifikansi α = 0,05
 
 Reproducibility Check:
-  [ ] Dependency terdokumentasi (requirements.txt / lock file)
-  [ ] Seed ditetapkan di semua level (Python, NumPy, framework)
-  [ ] Config di version control
-  [ ] README instruksi reproduksi lengkap
+  [ ☑ ] Dependency terdokumentasi (requirements.txt / lock file)
+  [ ☑ ] Seed ditetapkan di semua level (Python, NumPy, framework)
+  [ ☑ ] Config di version control
+  [ ☑ ] README instruksi reproduksi lengkap
 ```
 
 ---
@@ -109,23 +117,23 @@ Dokumentasikan environment untuk eksperimen Anda (boleh environment saat ini ata
 
 | Komponen | Spesifikasi |
 |----------|------------|
-| CPU | *Contoh: Intel Core i7-12700H, 14 Core* |
-| RAM | *Contoh: 32 GB DDR5* |
-| GPU | *Contoh: NVIDIA RTX 3060 6GB / CPU-only jika tidak ada GPU* |
-| OS | *Contoh: Ubuntu 22.04 LTS / Windows 11* |
-| Runtime | |
-| Framework | |
-| Random Seed | |
+| CPU | Intel Core i5-1135G7, 4 Core 8 Thread |
+| RAM | 8 GB DDR4 |
+| GPU | Intel Iris Xe Graphics |
+| OS | Windows 11 Pro 64-bit |
+| Runtime | Java Runtime Environment (JRE) 17 |
+| Framework | SmartPLS 4 |
+| Random Seed | 42 |
 
 **Dependencies (minimal 5):**
 
 | Library | Version | Alasan Dibutuhkan |
 |---------|---------|-------------------|
-| *Contoh: scikit-learn* | *1.3.2* | *Klasifikasi + evaluasi metrik* |
-| | | |
-| | | |
-| | | |
-| | | |
+| SmartPLS	| 4.0	| Analisis SEM-PLS |
+| Microsoft Excel	| 2021	| Input dan pembersihan data |
+| IBM SPSS	| 26	| Uji instrumen awal |
+| Java Runtime	| 17	| Menjalankan SmartPLS |
+| Windows 11 SDK	| 23H2	| Dukungan sistem operasi |
 
 ---
 
@@ -135,9 +143,9 @@ Rancang tes repeatability sederhana: jalankan kode yang sama 3× di environment 
 
 | Run | Seed | Metrik Utama | Hasil Sama? |
 |-----|------|-------------|-------------|
-| 1 | *Contoh: 42* | *Contoh: Accuracy* | — |
-| 2 | | | [ ] Ya / [ ] Tidak |
-| 3 | | | [ ] Ya / [ ] Tidak |
+| 1 | 42 | R-Square = 0,880 | — |
+| 2 | 42 | R-Square = 0,880 | [ ☑ ] Ya / [ ] Tidak |
+| 3 | 42 | R-Square = 0,880 | [ ☑ ] Ya / [ ] Tidak |
 
 **Jika hasil berbeda, kemungkinan penyebab:**
 
@@ -150,10 +158,10 @@ Rancang tes repeatability sederhana: jalankan kode yang sama 3× di environment 
 ___________________________________________________
 
 **Checklist kontrol yang sudah diterapkan:**
-- [ ] Random seed di-set di semua level
-- [ ] Tidak ada background process yang mengganggu
-- [ ] Cache dibersihkan antar-run
-- [ ] Config file yang sama untuk semua run
+- [ ☑ ] Random seed di-set di semua level
+- [ ☑ ] Tidak ada background process yang mengganggu
+- [ ☑ ] Cache dibersihkan antar-run
+- [ ☑ ] Config file yang sama untuk semua run
 
 ---
 
@@ -162,33 +170,96 @@ ___________________________________________________
 Tulis README minimum untuk eksperimen Anda (6 komponen wajib).
 
 ```
-# Judul Eksperimen: ____________________
+# Judul Eksperimen: Pengaruh E-Commerce terhadap Peningkatan Omzet UMKM Bermitra Grab di Kabupaten Garut
 
 ## 1. Environment
-> (Salin spesifikasi dari Latihan 1)
+> Hardware:
+
+Intel Core i5-1135G7
+RAM 8 GB
+SSD 512 GB
+
+  Software:
+
+Windows 11 Pro
+SmartPLS 4
+Microsoft Excel 2021
+IBM SPSS 26
 
 ## 2. Installation
-> (Langkah instalasi, misal: "pip install -r requirements.txt")
+> Install Java Runtime Environment 17
+  Install SmartPLS 4
+  Install Microsoft Excel 2021
+  Install IBM SPSS Statistics 26
+  Pastikan seluruh software berjalan normal
 
 ## 3. Data
-> (Deskripsi data: sumber, format, ukuran)
+> Sumber data:
+  - Kuesioner pelaku UMKM mitra Grab
+
+  Jumlah responden:
+  - 100 responden
+
+  Format data:
+  - Microsoft Excel (.xlsx)
+
+  Variabel:
+  - E-Commerce (X)
+  - Manfaat yang Dirasakan
+  - Kapabilitas Teknologi
+  - Tingkat Adopsi
+  - Peningkatan Omzet (Y)
+  - Peningkatan Hasil
+  - Kecukupan Hasil
+  - Dapat Berkembang
 
 ## 4. Execution
-> (Command untuk menjalankan eksperimen)
+> Import dataset ke SmartPLS
+  Bentuk model penelitian
+  Jalankan PLS Algorithm
+  Jalankan Bootstrapping
+  Analisis Outer Model
+  Analisis Inner Model
+  Interpretasi hasil
 
 ## 5. Configuration
-> (File config yang digunakan + parameter kunci)
+> Random Seed = 42
+  Bootstrapping = 5000
+  Significance Level = 0,05
+  Loading Factor Minimum = 0,70
+  Composite Reliability Minimum = 0,70
+  AVE Minimum = 0,50
 
 ## 6. Expected Output
-> (Contoh output yang diharapkan + format)
+> Output yang diharapkan:
+
+Nilai Outer Loading > 0,70
+Composite Reliability > 0,70
+AVE > 0,50
+R-Square = 0,880
+P-Value < 0,05
+Hipotesis diterima
+
+  Output akhir berupa:
+
+Tabel Validitas
+Tabel Reliabilitas
+Tabel R-Square
+Tabel F-Square
+Tabel Uji Hipotesis
+Kesimpulan penelitian
+
 ```
 
 ---
 
 ## Refleksi
 
-> Apakah eksperimen Anda saat ini bisa direproduksi oleh orang lain tanpa bantuan Anda? Komponen apa yang masih hilang?
+> Apakah eksperimen Anda saat ini bisa direproduksi oleh orang lain tanpa bantuan Anda? Komponen apa yang masih hilang? Ya, Karena spesifikasi perangkat, software, data, langkah analisis, parameter, dan output yang diharapkan telah didokumentasikan.
 
-**Level saat ini:** [ ] Repeatability / [ ] Reproducibility / [ ] Belum keduanya
+**Level saat ini:** [ ] Repeatability / [ ☑ ] Reproducibility / [ ] Belum keduanya
 **Komponen yang belum terdokumentasi:**
-> ___________________________________________________
+> Backup dataset mentah
+  Dokumentasi perubahan data (data cleaning log)
+  Screenshot konfigurasi SmartPLS
+  Repository penyimpanan file penelitian

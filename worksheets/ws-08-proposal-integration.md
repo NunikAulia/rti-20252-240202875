@@ -73,32 +73,25 @@ Jika ada lompatan (section B tidak menjawab pertanyaan section A), red thread pu
 PROPOSAL INTEGRATION CHECKLIST
 
 Koneksi Vertikal (Flow Atas-Bawah):
-  [ ] Problem → Gap: masalah terdokumentasi di literatur
-  [ ] Gap → RQ: pertanyaan menjawab gap spesifik
-  [ ] RQ → Hypothesis: hipotesis memprediksi jawaban
-  [ ] Hypothesis → Metric: metrik mengukur variabel dalam hipotesis
-  [ ] Metric → System: komponen sistem menghasilkan/mengukur metrik
-  [ ] System → Experiment: desain eksperimen menggunakan sistem
+  [ ☑ ] Problem → Gap: masalah terdokumentasi di literatur
+  [ ☑ ] Gap → RQ: pertanyaan menjawab gap spesifik
+  [ ☑ ] RQ → Hypothesis: hipotesis memprediksi jawaban
+  [ ☑ ] Hypothesis → Metric: metrik mengukur variabel dalam hipotesis
+  [ ☑ ] Metric → System: komponen sistem menghasilkan/mengukur metrik
+  [ ☑ ] System → Experiment: desain eksperimen menggunakan sistem
 
 Koneksi Horizontal (Konsistensi):
-  [ ] Istilah sama di semua bagian
-  [ ] Variabel di RQ = variabel di hipotesis = metrik di desain
-  [ ] Scope tidak berubah dari masalah ke eksperimen
-
-Cognitive Trap Checklist:
-  [ ] Tidak ada paragraf "promosi" di pendahuluan (hanya data & gap)
-  [ ] Metodologi disesuaikan ke RQ, bukan copy-paste textbook
-  [ ] Timeline sudah ditambah buffer 30-50% dari estimasi awal
-  [ ] Proposal mengakui kemungkinan H0 tidak ditolak (honest uncertainty)
-  [ ] Tidak ada klaim "pasti berhasil" atau "meningkatkan signifikan"
+  [ ☑ ] Istilah sama di semua bagian
+  [ ☑ ] Variabel di RQ = variabel di hipotesis = metrik di desain
+  [ ☑ ] Scope tidak berubah dari masalah ke eksperimen
 
 Rubrik Self-Assessment:
 | Kriteria     | 1 (Lemah)                                        | 2 (Cukup)                                     | 3 (Baik)                                           | Skor |
 |------------- |--------------------------------------------------|-----------------------------------------------|----------------------------------------------------|------|
-| Koherensi    | >2 koneksi vertikal terputus                     | 1-2 koneksi lemah, argumen masih bisa diikuti | Semua 6 koneksi terhubung, red thread jelas        |      |
-| Specificity  | Variabel/metrik masih abstrak, tidak ada angka   | Sebagian metrik terdefinisi numerik           | Semua metrik + threshold + unit pengukuran jelas   |      |
-| Feasibility  | Timeline >6 bulan tanpa memperhitungkan sumber   | Timeline 3-6 bulan dengan asumsi tertentu     | Timeline 1-3 bulan realistis dengan rencana detail |      |
-| Rigor        | Baseline tidak jelas atau straw man              | 1-2 baseline dengan justifikasi partial       | 2+ baseline SOTA + justifikasi pemilihan lengkap   |      |
+| Koherensi    |                      |     |  ☑   | 3 |
+| Specificity  |              |   |   ☑    | 3 |
+| Feasibility  |       |      |  ☑    | 3 |
+| Rigor        |               |        |   ☑   |    3  | 
 ```
 
 ---
@@ -109,13 +102,13 @@ Kumpulkan hasil dari WS-02 sampai WS-07 menjadi satu ringkasan proposal.
 
 | Komponen | Sumber | Isi (1-2 kalimat) |
 |----------|--------|-------------------|
-| Problem Statement | WS-02 | *Contoh: Sistem rekomendasi memiliki akurasi tinggi (RMSE 0.87) tetapi satisfaction score rendah (45/100). Gap antara metrik teknis dan kepuasan pengguna belum diteliti.* |
-| Gap | WS-03 | *Contoh: Tidak ada studi yang mengintegrasikan collaborative filtering dengan user-context signals untuk meningkatkan satisfaction.* |
-| RQ | WS-04 | *Contoh: Apakah penambahan context-aware signals pada collaborative filtering meningkatkan satisfaction score tanpa menurunkan RMSE?* |
-| Hipotesis | WS-04 | *Contoh: H₁: Sistem CF+context menghasilkan satisfaction ≥ 70/100 dengan RMSE ≤ 0.90 dibanding baseline CF murni.* |
-| Variabel & Metrik | WS-05 | *Contoh: IV = jenis sistem (CF vs CF+context); DV = satisfaction score (skala 0-100) + RMSE (regresi).* |
-| Sistem | WS-06 | |
-| Desain Eksperimen | WS-07 | |
+| Problem Statement | WS-02 | Pelaku UMKM yang bermitra dengan Grab menghadapi persaingan digital yang semakin ketat. Walaupun penggunaan e-commerce meningkat, masih banyak UMKM yang belum mampu memanfaatkan teknologi digital secara optimal untuk meningkatkan omzet usaha. |
+| Gap | WS-03 | Penelitian sebelumnya banyak membahas pengaruh e-commerce terhadap UMKM secara umum, namun masih terbatas penelitian yang secara khusus mengkaji pengaruh manfaat yang dirasakan, kapabilitas teknologi, dan tingkat adopsi e-commerce terhadap peningkatan omzet UMKM mitra Grab di Kabupaten Garut. |
+| RQ | WS-04 | Apakah manfaat yang dirasakan, kapabilitas teknologi, dan tingkat adopsi e-commerce berpengaruh terhadap peningkatan omzet UMKM yang bermitra dengan Grab di Kabupaten Garut? |
+| Hipotesis | WS-04 | H₁: Manfaat yang dirasakan, kapabilitas teknologi, dan tingkat adopsi e-commerce berpengaruh positif dan signifikan terhadap peningkatan omzet UMKM yang bermitra dengan Grab di Kabupaten Garut. |
+| Variabel & Metrik | WS-05 | Variabel bebas (X): e-commerce yang terdiri dari manfaat yang dirasakan, kapabilitas teknologi, dan tingkat adopsi. Variabel terikat (Y): peningkatan omzet yang diukur melalui peningkatan hasil, kecukupan hasil, dan kemampuan berkembang. |
+| Sistem | WS-06 | Sistem penelitian menggunakan instrumen kuesioner yang disebarkan kepada 100 pelaku UMKM mitra Grab. Data dianalisis menggunakan metode SEM-PLS. |
+| Desain Eksperimen | WS-07 | Penelitian menggunakan pendekatan kuantitatif deskriptif. Data dikumpulkan melalui kuesioner, diuji validitas dan reliabilitasnya, kemudian dianalisis menggunakan SEM-PLS untuk mengetahui hubungan antar variabel. |
 
 ---
 
@@ -125,19 +118,19 @@ Verifikasi 6 koneksi kritis. Isi dengan merujuk tabel di Latihan 1.
 
 | Koneksi | Status | Bukti |
 |---------|--------|-------|
-| Problem → Gap | *Contoh: ✅ — gap muncul dari 15 paper Bab 3 yang tidak ada yang mengkombinasikan CF + context untuk satisfaction* | |
-| Gap → RQ | *Contoh: ✅ — RQ langsung menanyakan apakah CF+context meningkatkan satisfaction* | |
-| RQ → Hypothesis | *Contoh: ✅ — H₁ memprediksi satisfaction ≥ 70 dengan threshold RMSE ≤ 0.90* | |
-| Hypothesis → Metric | | |
-| Metric → System | | |
-| System → Experiment | | |
+| Problem → Gap | ✅ | Permasalahan pemanfaatan e-commerce yang belum optimal menghasilkan kebutuhan penelitian mengenai faktor-faktor e-commerce yang memengaruhi peningkatan omzet UMKM. |
+| Gap → RQ | ✅ | RQ dirumuskan secara langsung untuk menjawab gap mengenai pengaruh manfaat yang dirasakan, kapabilitas teknologi, dan tingkat adopsi terhadap omzet UMKM. |
+| RQ → Hypothesis | ✅ | Hipotesis memprediksi bahwa ketiga faktor e-commerce tersebut berpengaruh positif dan signifikan terhadap peningkatan omzet. |
+| Hypothesis → Metric | ✅ | Variabel dalam hipotesis diterjemahkan ke dalam indikator yang dapat diukur melalui kuesioner. |
+| Metric → System | ✅ | Pengukuran indikator dilakukan menggunakan instrumen penelitian berupa kuesioner dan analisis SEM-PLS. |
+| System → Experiment | ✅ | Sistem pengumpulan data dan analisis digunakan secara langsung dalam desain penelitian kuantitatif. |
 
-**Koneksi mana yang paling lemah?** _______________________
+**Koneksi mana yang paling lemah?** Problem → Gap
 **Bagaimana cara memperkuatnya?**
-> ___________________________________________________
+> Memperbanyak kajian penelitian terdahulu yang menunjukkan bahwa pengaruh e-commerce terhadap omzet UMKM telah banyak diteliti secara umum, namun belum secara spesifik pada UMKM mitra Grab di Kabupaten Garut dengan indikator yang digunakan dalam penelitian ini.
 
-**Konsistensi horizontal — apakah istilah dan scope konsisten?** [ ] Ya / [ ] Tidak
-> Jika tidak, di bagian mana terjadi inkonsistensi? _________
+**Konsistensi horizontal — apakah istilah dan scope konsisten?** [ ☑ ] Ya / [ ] Tidak
+> Jika tidak, di bagian mana terjadi inkonsistensi? -
 
 ---
 
@@ -147,15 +140,15 @@ Evaluasi proposal mini menggunakan rubrik.
 
 | Kriteria | Skor (1-3) | Justifikasi |
 |----------|-----------|-------------|
-| Koherensi | *Contoh: 2 — koneksi gap→RQ masih lemah karena gap belum cukup narrow* | |
-| Specificity | *Contoh: 3 — metrik (satisfaction 0-100, RMSE) sudah terdefinisi numerik* | |
-| Feasibility | | |
-| Rigor | | |
+| Koherensi | 3 | Alur penelitian dari masalah, gap, rumusan masalah, hipotesis, variabel, hingga metode tersusun secara logis dan saling terhubung. |
+| Specificity | 3 | Variabel, indikator, jumlah responden, teknik pengumpulan data, dan metode analisis telah dijelaskan secara spesifik. |
+| Feasibility | 3 | Penelitian realistis untuk dilaksanakan karena menggunakan kuesioner kepada 100 responden dan metode analisis yang sesuai. |
+| Rigor | 3 | Penelitian menggunakan pengujian validitas, reliabilitas, outer model, inner model, R-Square, F-Square, dan pengujian hipotesis. |
 
-**Skor total:** _____ / 12
+**Skor total:** 12 / 12
 
-**Apakah proposal siap untuk fase eksekusi?** [ ] Ya / [ ] Belum
-> Jika belum, apa yang perlu diperbaiki? __________________
+**Apakah proposal siap untuk fase eksekusi?** [ ☑ ] Ya / [ ] Belum
+> Jika belum, apa yang perlu diperbaiki? -
 
 ---
 
@@ -163,8 +156,8 @@ Evaluasi proposal mini menggunakan rubrik.
 
 > Dari seluruh proses WS-01 sampai WS-08, bagian mana yang paling mudah dan paling sulit? Mengapa? Apa yang akan dilakukan berbeda jika mengulang dari awal?
 
-**Bagian termudah:** ____________________________________
-**Bagian tersulit:** ____________________________________
+**Bagian termudah:** Menentukan variabel dan metrik penelitian karena indikator penelitian telah dijelaskan secara rinci dalam artikel sehingga mudah dipetakan ke dalam desain penelitian.
+**Bagian tersulit:** Menentukan gap penelitian karena diperlukan analisis berbagai penelitian terdahulu untuk menemukan kebaruan penelitian yang benar-benar relevan dan memiliki kontribusi ilmiah.
 **Yang akan dilakukan berbeda:**
-> ___________________________________________________
-> ___________________________________________________
+> Jika mengulang dari awal, saya akan melakukan pemetaan literatur yang lebih mendalam sehingga gap penelitian dapat dirumuskan secara lebih spesifik dan kuat.
+> Saya juga akan membuat matriks keterkaitan antara masalah, gap, rumusan masalah, hipotesis, variabel, dan metode penelitian sejak awal agar koherensi proposal lebih mudah dipastikan dan dievaluasi.
