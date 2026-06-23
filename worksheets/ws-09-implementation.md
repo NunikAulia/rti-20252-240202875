@@ -81,14 +81,14 @@ Hardware:
 Software:
   OS        : Windows 11 Pro 64-bit
   Runtime   : Java Runtime Environment (JRE) 17
-  Framework : SmartPLS 4
+  Framework : SmartPLS 4.0
 
 Dependencies:
 | Library | Version | Sumber | Hash/Checksum |
 |---------|---------|--------|---------------|
-|     SmartPLS	| 4.0	| SmartPLS Official	| N/A |
+|     SmartPLS	| 4.0	| SmartPLS Official Website	| N/A |
 | Microsoft Excel | 2021	| Microsoft	| N/A |
-| IBM SPSS Statistics	| 26	| IBM	| N/A |
+| Adobe Acrobat Reader	| 2024	| Adobe	| N/A |
 | Java Runtime Environment	| 17	| Oracle	| N/A |
 | Windows 11	| 23H2	| Microsoft	| N/A    | 
 
@@ -96,11 +96,12 @@ Konfigurasi:
   Config file     : Dataset_Kuesioner_UMKM.xlsx
   Random seed     : 42
   Hyperparameters : 
-  - Minimum loading factor > 0,70
-  - Composite Reliability > 0,70
-  - AVE > 0,50
-  - Bootstrapping = 5000 subsamples
-  - Signifikansi α = 0,05
+  - Significance Level (α) = 0,05
+  - Bootstrap Subsamples = 5000
+  - Outer Loading ≥ 0,70
+  - AVE ≥ 0,50
+  - Composite Reliability ≥ 0,70
+  - Cronbach Alpha ≥ 0,70
 
 Reproducibility Check:
   [ ☑ ] Dependency terdokumentasi (requirements.txt / lock file)
@@ -117,12 +118,12 @@ Dokumentasikan environment untuk eksperimen Anda (boleh environment saat ini ata
 
 | Komponen | Spesifikasi |
 |----------|------------|
-| CPU | Intel Core i5-1135G7, 4 Core 8 Thread |
+| CPU | Intel Core i5-1135G7 |
 | RAM | 8 GB DDR4 |
 | GPU | Intel Iris Xe Graphics |
 | OS | Windows 11 Pro 64-bit |
 | Runtime | Java Runtime Environment (JRE) 17 |
-| Framework | SmartPLS 4 |
+| Framework | SmartPLS 4.0 |
 | Random Seed | 42 |
 
 **Dependencies (minimal 5):**
@@ -130,10 +131,10 @@ Dokumentasikan environment untuk eksperimen Anda (boleh environment saat ini ata
 | Library | Version | Alasan Dibutuhkan |
 |---------|---------|-------------------|
 | SmartPLS	| 4.0	| Analisis SEM-PLS |
-| Microsoft Excel	| 2021	| Input dan pembersihan data |
-| IBM SPSS	| 26	| Uji instrumen awal |
-| Java Runtime	| 17	| Menjalankan SmartPLS |
-| Windows 11 SDK	| 23H2	| Dukungan sistem operasi |
+| Microsoft Excel	| 2021	| Pengolahan data kuesioner |
+| Adobe Acrobat Reader	| 2024	| Membaca dokumen penelitian |
+| Java Runtime Environment	| 17	| Menjalankan SmartPLS |
+| Windows 11 Pro	| 23H2	| Sistem operasi penelitian |
 
 ---
 
@@ -143,17 +144,16 @@ Rancang tes repeatability sederhana: jalankan kode yang sama 3× di environment 
 
 | Run | Seed | Metrik Utama | Hasil Sama? |
 |-----|------|-------------|-------------|
-| 1 | 42 | R-Square = 0,880 | — |
-| 2 | 42 | R-Square = 0,880 | [ ☑ ] Ya / [ ] Tidak |
-| 3 | 42 | R-Square = 0,880 | [ ☑ ] Ya / [ ] Tidak |
+| 1 | 42 | Path Coefficient | — |
+| 2 | 42 | Path Coefficient | [ ☑ ] Ya / [ ] Tidak |
+| 3 | 42 | Path Coefficient | [ ☑ ] Ya / [ ] Tidak |
 
 **Jika hasil berbeda, kemungkinan penyebab:**
 
-> Penyebab umum non-repeatability:
-> - **Thermal throttling** — CPU/GPU overheating pada run berturut-turut → clock speed turun → waktu eksekusi berubah
-> - **Background process** — antivirus scan, update OS, atau cloud sync aktif saat run berlangsung
-> - **Cache dari run sebelumnya** — hasil tersimpan di memori/disk sehingga run berikutnya tidak menjalankan komputasi penuh
-> - **Random state tidak dikontrol di semua level** — Python seed di-set, tapi NumPy/PyTorch/TensorFlow punya seed independen
+> Dataset berubah
+> Bootstrap menggunakan seed berbeda
+>Konfigurasi SmartPLS berubah
+> Kesalahan input data
 
 ___________________________________________________
 
@@ -170,84 +170,61 @@ ___________________________________________________
 Tulis README minimum untuk eksperimen Anda (6 komponen wajib).
 
 ```
-# Judul Eksperimen: Pengaruh E-Commerce terhadap Peningkatan Omzet UMKM Bermitra Grab di Kabupaten Garut
+# Judul Eksperimen: Analisis Pengaruh Manfaat yang Dirasakan, Kapabilitas Teknologi, dan Tingkat Adopsi E-Commerce terhadap Peningkatan Omzet UMKM Bermitra Grab di Kabupaten Garut
 
 ## 1. Environment
-> Hardware:
-
-Intel Core i5-1135G7
-RAM 8 GB
-SSD 512 GB
-
-  Software:
-
-Windows 11 Pro
-SmartPLS 4
-Microsoft Excel 2021
-IBM SPSS 26
+> Penelitian dijalankan pada Windows 11 Pro menggunakan SmartPLS 4.0 dengan Java Runtime Environment 17.
 
 ## 2. Installation
-> Install Java Runtime Environment 17
+> Install Java Runtime Environment (JRE) 17
   Install SmartPLS 4
   Install Microsoft Excel 2021
-  Install IBM SPSS Statistics 26
-  Pastikan seluruh software berjalan normal
+  Siapkan file data kuesioner responden.
 
 ## 3. Data
-> Sumber data:
-  - Kuesioner pelaku UMKM mitra Grab
+> Sumber data: Data primer
 
-  Jumlah responden:
-  - 100 responden
+  Jumlah responden: 100 Responden UMKM Mitra Grab Kabupaten Garut
 
-  Format data:
-  - Microsoft Excel (.xlsx)
+  Instrumen : Kuesioner Skala Likert 1–5
 
   Variabel:
-  - E-Commerce (X)
-  - Manfaat yang Dirasakan
-  - Kapabilitas Teknologi
-  - Tingkat Adopsi
-  - Peningkatan Omzet (Y)
-  - Peningkatan Hasil
-  - Kecukupan Hasil
-  - Dapat Berkembang
+  X1 = Manfaat yang Dirasakan
+  X2 = Kapabilitas Teknologi
+  X3 = Tingkat Adopsi E-Commerce
+  Y = Peningkatan Omzet
 
 ## 4. Execution
-> Import dataset ke SmartPLS
-  Bentuk model penelitian
-  Jalankan PLS Algorithm
-  Jalankan Bootstrapping
-  Analisis Outer Model
-  Analisis Inner Model
-  Interpretasi hasil
+> Input data responden ke Microsoft Excel.
+  Import dataset ke SmartPLS
+  Membuat model penelitian.
+  Menjalankan PLS Algorithm.
+  Menjalankan Bootstrapping.
+  Mengevaluasi Outer Model.
+  Mengevaluasi Inner Model.
+  Menginterpretasikan hasil.
 
 ## 5. Configuration
-> Random Seed = 42
-  Bootstrapping = 5000
-  Significance Level = 0,05
-  Loading Factor Minimum = 0,70
+> Bootstrapping = 5000
+  Significance Level = 5%
+  Over Loading Minimum = 0,70
   Composite Reliability Minimum = 0,70
   AVE Minimum = 0,50
 
 ## 6. Expected Output
 > Output yang diharapkan:
 
-Nilai Outer Loading > 0,70
-Composite Reliability > 0,70
-AVE > 0,50
-R-Square = 0,880
-P-Value < 0,05
-Hipotesis diterima
+  Nilai Outer Loading
+  Cronbach Alpha
+  Composite Reliability
+  AVE
+  R-Square
+  Path Coefficient
+  T-Statistic
+  P-Value
+  f-square
 
-  Output akhir berupa:
-
-Tabel Validitas
-Tabel Reliabilitas
-Tabel R-Square
-Tabel F-Square
-Tabel Uji Hipotesis
-Kesimpulan penelitian
+  Hasil digunakan untuk menguji pengaruh manfaat yang dirasakan, kapabilitas teknologi, dan tingkat adopsi e-commerce terhadap peningkatan omzet UMKM.
 
 ```
 
@@ -255,11 +232,11 @@ Kesimpulan penelitian
 
 ## Refleksi
 
-> Apakah eksperimen Anda saat ini bisa direproduksi oleh orang lain tanpa bantuan Anda? Komponen apa yang masih hilang? Ya, Karena spesifikasi perangkat, software, data, langkah analisis, parameter, dan output yang diharapkan telah didokumentasikan.
+> Apakah eksperimen Anda saat ini bisa direproduksi oleh orang lain tanpa bantuan Anda? Komponen apa yang masih hilang? Eksperimen ini berpotensi direproduksi oleh peneliti lain karena data, instrumen, metode analisis, software, dan prosedur pengujian telah dijelaskan secara rinci.
 
-**Level saat ini:** [ ] Repeatability / [ ☑ ] Reproducibility / [ ] Belum keduanya
+**Level saat ini:** [ ☑ ] Repeatability / [ ☑ ] Reproducibility / [ ] Belum keduanya
 **Komponen yang belum terdokumentasi:**
-> Backup dataset mentah
-  Dokumentasi perubahan data (data cleaning log)
-  Screenshot konfigurasi SmartPLS
-  Repository penyimpanan file penelitian
+> Lampiran kuesioner lengkap
+  File dataset responden
+  Dokumentasi hasil SmartPLS
+  Repository penyimpanan data penelitian

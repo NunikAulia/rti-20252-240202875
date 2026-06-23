@@ -69,10 +69,10 @@ Completeness:
   [ ☑ ] Semua skenario tercakup
   [ ☑ ] Jumlah run sesuai rencana
   [ ☑ ] Tidak ada file output hilang
-  Missing: 0 dari 5 data points
+  Missing: 0 dari 100 data responden
 
 Format Consistency:
-  [ ☑ ] Semua file format sama (CSV/JSON/...)
+  [ ☑ ] Semua file format sama (CSV/JSON/Excel)
   [ ☑ ] Header konsisten
   [ ☑ ] Tipe data konsisten (numerik tetap numerik)
 
@@ -80,7 +80,7 @@ Range & Logic:
   [ ☑ ] Nilai dalam range masuk akal
   [ ☑ ] Tidak ada waktu negatif
   [ ☑ ] Metrik 0–100%, tidak di luar range
-  Anomali ditemukan: Tidak ditemukan anomali yang signifikan. Seluruh nilai validitas, reliabilitas, dan pengujian hipotesis berada dalam batas yang dapat diterima.
+  Anomali ditemukan: Tidak ditemukan anomali signifikan pada tahap validasi awal.
 
 Cross-Validation:
   [ ☑ ] Run identik → hasil mendekati
@@ -100,12 +100,16 @@ Verifikasi apakah semua data yang direncanakan sudah terkumpul.
 
 | Skenario | Run Direncanakan | Run Tercatat | Missing | Alasan |
 |----------|-----------------|-------------|---------|--------|
-| SEM-PLS UMKM Grab | 5 | 5 | 0 | - |
+| Penyebaran Kuesioner	| 100	| 100	| 0	| - |
+| Pemeriksaan Data	| 100	| 100	| 0	| - |
+| Uji Validitas	| 100	| 100	| 0	| - |
+| Uji Reliabilitas	| 100	| 100	| 0	| - |
+| Analisis SEM-PLS	| 100 |	100	| 0	| - |
 
-**Total expected:** 5 | **Total actual:** 5 | **Missing:** 0
+**Total expected:** 100 | **Total actual:** 100 | **Missing:** 0
 
 **Keputusan untuk data missing:**
-> Tidak terdapat data yang hilang sehingga seluruh data dapat digunakan untuk proses analisis statistik.
+> Tidak terdapat data yang hilang sehingga seluruh data dapat digunakan dalam proses analisis SEM-PLS.
 
 ---
 
@@ -117,23 +121,23 @@ Periksa data Anda untuk anomali. Gunakan metode IQR atau z-score.
 
 | Run | Accuracy (%) |
 |-----|-------------|
-| 1 | 0,880 |
-| 2 | 0,881 |
-| 3 | 0,879 |
-| 4 | 0,882 |
-| 5 | 0,878 |
+| 1 | 4,5 |
+| 2 | 4,2 |
+| 3 | 4,7 |
+| 4 | 2,1 |
+| 5 | 4,4 |
 
 **Deteksi outlier:**
-- Q1 = 0,879 | Q3 = 0,881 | IQR = 0,002
-- Batas bawah (Q1 - 1.5×IQR) = 0,876
-- Batas atas (Q3 + 1.5×IQR) = 0,884
-- Outlier terdeteksi: Tidak Ada
+- Q1 = 4,2 | Q3 = 4,5 | IQR = 0,3
+- Batas bawah (Q1 - 1.5×IQR) = 3,75
+- Batas atas (Q3 + 1.5×IQR) = 4,95
+- Outlier terdeteksi: Responden 4 (2,1)
 
 **Investigasi (untuk setiap outlier):**
 
 | Outlier | Nilai | Kemungkinan Penyebab | Keputusan |
 |---------|-------|---------------------|-----------|
-| Tidak Ada | - | - | Data dipertahankan |
+| Responden 4 | 2,1 | Tingkat adopsi e-commerce sangat rendah | Tetap dipertahankan karena masih mencerminkan kondisi nyata responden |
 
 ---
 
@@ -141,19 +145,16 @@ Periksa data Anda untuk anomali. Gunakan metode IQR atau z-score.
 
 Buat laporan validasi ringkas untuk dataset eksperimen Anda.
 
-**1. Completeness:** 100% data terkumpul
-**2. Format:** [ ☑ ] Konsisten / [ ] Ada inkonsistensi: Semua data menggunakan format yang sama dan dapat dibaca oleh SmartPLS tanpa error.
+**1. Completeness:** 100% data berhasil terkumpul sesuai target penelitian yaitu 100 pelaku UMKM Mitra Grab Kabupaten Garut.
+**2. Format:** [ ☑ ] Konsisten / [ ] Seluruh data menggunakan format yang sama dengan skala Likert 1–5.
 **3. Range check (anomali):** 
-  Nilai Outer Loading berada di atas 0,70.
-  Nilai AVE berada di atas 0,50.
-  Nilai Composite Reliability berada di atas 0,70.
-  Nilai R-Square sebesar 0,880.
-  Nilai P-Value seluruh hipotesis sebesar 0,000.
+ Tidak ditemukan nilai di luar rentang yang telah ditentukan.
 
-Tidak ditemukan nilai yang berada di luar batas logis penelitian.
-**4. Logic check:** [ ☑ ] Parameter sesuai plan / [ ] Ada ketidaksesuaian: =
+  Seluruh jawaban responden berada pada rentang 1 sampai 5.
 
-**Kesimpulan:** [ ☑ ] Data siap analisis / [ ] Perlu tindakan: Seluruh data telah memenuhi aspek completeness, consistency, validity, dan accuracy sehingga layak digunakan untuk analisis dan penarikan kesimpulan penelitian.
+**4. Logic check:** [ ☑ ] Parameter sesuai plan / [ ] Ada ketidaksesuaian: -
+
+**Kesimpulan:** [ ☑ ] Data siap analisis / [ ] Perlu tindakan: 
 
 ---
 
@@ -161,6 +162,5 @@ Tidak ditemukan nilai yang berada di luar batas logis penelitian.
 
 > Apa perbedaan antara "data yang benar" dan "data yang dipercaya"? Mengapa proses validasi formal diperlukan meskipun data dikumpulkan secara otomatis?
 
-> Data yang benar belum tentu merupakan data yang dipercaya. Data yang benar hanya menunjukkan bahwa data berhasil tercatat, sedangkan data yang dipercaya adalah data yang telah melalui proses validasi sehingga kualitasnya dapat dipertanggungjawabkan secara ilmiah.
-> Proses validasi formal tetap diperlukan meskipun data dikumpulkan secara otomatis karena kesalahan dapat terjadi pada sistem pencatatan, proses input, format data, maupun konfigurasi perangkat lunak. Tanpa validasi, peneliti berisiko menggunakan data yang tidak lengkap, tidak konsisten, atau mengandung anomali yang dapat memengaruhi hasil penelitian.
-> Melalui proses validasi, peneliti dapat memastikan bahwa data yang digunakan benar-benar sesuai dengan rancangan eksperimen dan layak digunakan sebagai dasar pengambilan kesimpulan ilmiah.
+> Data yang benar belum tentu menjadi data yang dipercaya. Data yang benar hanya menunjukkan bahwa nilai yang dicatat sesuai dengan hasil pengukuran. Sebaliknya, data yang dipercaya adalah data yang telah melalui proses validasi, pemeriksaan konsistensi, pengecekan kelengkapan, serta verifikasi logika sehingga dapat dipertanggungjawabkan secara ilmiah.
+> Proses validasi formal tetap diperlukan meskipun data dikumpulkan secara otomatis karena kesalahan dapat terjadi pada proses input, penyimpanan, maupun pengolahan data. Dengan validasi yang sistematis, kualitas data dapat dijamin sehingga hasil analisis SEM-PLS menjadi lebih akurat, valid, dan dapat direplikasi oleh peneliti lain.
