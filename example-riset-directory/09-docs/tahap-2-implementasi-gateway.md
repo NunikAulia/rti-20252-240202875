@@ -1,39 +1,101 @@
-# Tahap 2 — Implementasi API Gateway (Go)
+# Tahap 2 – Penyusunan Instrumen Penelitian
 
 **Status:** Selesai
-**Acuan arsitektur:** [tahap-1-arsitektur-dan-skema-database.md](tahap-1-arsitektur-dan-skema-database.md)
-**Lokasi kode:** [../05-kode/gateway/](../05-kode/gateway/)
+
+**Acuan Desain:** Tahap 1 – Perancangan Desain Penelitian & Variabel
 
 ---
 
 ## Tujuan
 
-Mengimplementasikan API Gateway (Go + Echo) yang mendukung dua mode operasi melalui `CACHE_MODE`:
+Menyusun instrumen penelitian berupa kuesioner untuk mengukur pengaruh manfaat yang dirasakan, kapabilitas teknologi, dan tingkat adopsi e-commerce terhadap peningkatan omzet UMKM bermitra Grab di Kabupaten Garut.
 
-- `none` — baseline, setiap request langsung query `signing_keys` di PostgreSQL.
-- `hybrid` — mitigasi penuh: Redis L1 cache (positive/negative) + rate-limit counter permanen di PostgreSQL.
+Instrumen disusun berdasarkan variabel penelitian yang telah ditentukan, yaitu:
+
+- **X1** = Manfaat yang Dirasakan
+- **X2** = Kapabilitas Teknologi
+- **X3** = Tingkat Adopsi E-Commerce
+- **Y** = Peningkatan Omzet UMKM
+
+---
 
 ## Deliverable
 
-- [x] Struktur project Go (`cmd/gateway`, `internal/...`) — DDD-lite per bounded-context (`jwks`, `ratelimit`, `jwtauth`, `httpapi`, `platform`, `metrics`)
-- [x] `docker-compose.yml` (gateway, postgres, redis) dengan healthcheck & `depends_on: condition: service_healthy`
-- [x] Migration SQL via Sqitch (`signing_keys`, `rate_limit_counters`, `upsert_rate_limit_counter` function)
-- [x] Skrip seed (`scripts/seed`): generate RSA-2048 keypair, insert ke `signing_keys`, cetak contoh JWT valid (exp +24h)
-- [x] Middleware verifikasi JWT (RS256) + resolusi `kid` (mode `none` dan `hybrid`, fail-closed pada Postgres down, fail-open pada Redis down)
-- [x] Endpoint `/metrics` (Prometheus, prefix `jwksgw_`): cache hit/miss, db query count, rate-limit blocked count, auth outcome, request duration
-- [x] Konfigurasi via environment variable (`.env.example`)
-- [x] `/healthz` (dipakai healthcheck compose & runner Tahap 3)
-- [x] `README.md` dengan command mentah (sqitch deploy, seed, run, docker compose, switch `CACHE_MODE`)
+- [x] Penentuan variabel penelitian
+- [x] Penyusunan indikator setiap variabel
+- [x] Penyusunan butir pertanyaan kuesioner
+- [x] Penentuan skala pengukuran Likert 1–5
+- [x] Penentuan target responden penelitian
+- [x] Penyusunan format data untuk analisis SmartPLS
+- [x] Pemeriksaan awal kesesuaian indikator dengan variabel penelitian
 
-## Hasil Verifikasi End-to-End
+---
 
-Diverifikasi manual via `docker compose` + curl (lihat [../05-kode/gateway/README.md](../05-kode/gateway/README.md) bagian "Verifikasi end-to-end"):
+## Skala Pengukuran
 
-- **Hybrid**: valid kid → 200 (cache miss → DB → fill cache) → 200 (cache hit); unknown kid → 401 `invalid_kid` (negative cache) tanpa query DB berulang; flood concurrent dengan `kid` unik → sebagian `429 rate_limited` setelah >20 req/s per `client_ip`.
-- **None**: valid kid selalu 200 dengan `jwksgw_db_queries_total{resolve_key}` naik 1:1 per request; tidak pernah `429`.
-- **Fail-closed**: Postgres down → `503 service_unavailable` (kedua mode). Redis down (hybrid) → kid yang sudah ter-cache tetap `200` (fallback Postgres), `/healthz` melaporkan `redis:false`.
+| Skor | Keterangan |
+|------|------------|
+| 1 | Sangat Tidak Setuju |
+| 2 | Tidak Setuju |
+| 3 | Netral |
+| 4 | Setuju |
+| 5 | Sangat Setuju |
 
-## Catatan Lingkungan
+---
 
-- PostgreSQL container di-expose ke host pada port **5433** (bukan 5432) untuk menghindari konflik dengan instance PostgreSQL lokal di mesin development. Di dalam jaringan Docker, gateway tetap mengakses `postgres:5432`.
-- Sqitch project (`migrations/`) adalah dokumentasi migrasi resmi (deploy/revert/verify), namun di mesin development saat ini `sqitch` CLI tidak punya driver `DBD::Pg` — migrasi diverifikasi dengan menjalankan file `deploy/*.sql` langsung via `psql`. Pastikan environment dengan `DBD::Pg` terpasang untuk `sqitch deploy` penuh.
+## Indikator Variabel
+
+| Variabel | Kode | Indikator |
+|----------|------|-----------|
+| Manfaat yang Dirasakan | X1.1 | E-commerce membantu memperluas jangkauan pasar |
+| Manfaat yang Dirasakan | X1.2 | E-commerce mempermudah proses penjualan |
+| Manfaat yang Dirasakan | X1.3 | E-commerce membantu meningkatkan efisiensi usaha |
+| Kapabilitas Teknologi | X2.1 | Pelaku UMKM mampu menggunakan aplikasi digital |
+| Kapabilitas Teknologi | X2.2 | Pelaku UMKM mampu mengelola informasi produk secara digital |
+| Kapabilitas Teknologi | X2.3 | Pelaku UMKM mampu memanfaatkan fitur promosi digital |
+| Tingkat Adopsi E-Commerce | X3.1 | UMKM menggunakan e-commerce secara rutin |
+| Tingkat Adopsi E-Commerce | X3.2 | UMKM menerima pesanan melalui platform digital |
+| Tingkat Adopsi E-Commerce | X3.3 | UMKM menggunakan e-commerce sebagai saluran pemasaran utama |
+| Peningkatan Omzet UMKM | Y1 | Omzet usaha meningkat setelah menggunakan e-commerce |
+| Peningkatan Omzet UMKM | Y2 | Jumlah transaksi meningkat setelah menggunakan e-commerce |
+| Peningkatan Omzet UMKM | Y3 | Pendapatan usaha menjadi lebih stabil setelah menggunakan e-commerce |
+
+---
+
+## Format Dataset
+
+| ID Responden | X1.1 | X1.2 | X1.3 | X2.1 | X2.2 | X2.3 | X3.1 | X3.2 | X3.3 | Y1 | Y2 | Y3 |
+|--------------|------|------|------|------|------|------|------|------|------|----|----|----|
+| R001 | 1–5 | 1–5 | 1–5 | 1–5 | 1–5 | 1–5 | 1–5 | 1–5 | 1–5 | 1–5 | 1–5 | 1–5 |
+| R002 | 1–5 | 1–5 | 1–5 | 1–5 | 1–5 | 1–5 | 1–5 | 1–5 | 1–5 | 1–5 | 1–5 | 1–5 |
+
+---
+
+## Hasil Verifikasi Instrumen Awal
+
+Instrumen penelitian telah diperiksa berdasarkan kesesuaian antara variabel, indikator, dan tujuan penelitian.
+
+Hasil verifikasi awal menunjukkan bahwa:
+
+- Setiap variabel memiliki minimal tiga indikator.
+- Semua indikator menggunakan skala Likert 1–5.
+- Indikator disusun sesuai konteks UMKM bermitra Grab.
+- Data yang dihasilkan dapat dianalisis menggunakan SmartPLS.
+- Instrumen mendukung pengujian outer model dan inner model.
+
+---
+
+## Catatan Pelaksanaan
+
+Instrumen penelitian ini digunakan untuk mengumpulkan data primer dari 100 pelaku UMKM bermitra Grab di Kabupaten Garut. Data hasil kuesioner akan diolah menggunakan SmartPLS untuk menguji validitas, reliabilitas, serta hubungan antar variabel penelitian.
+
+---
+
+## Keputusan Teknis
+
+1. Kuesioner menggunakan skala Likert 1–5.
+2. Setiap variabel memiliki tiga indikator utama.
+3. Format data disiapkan dalam bentuk Microsoft Excel (.xlsx).
+4. Data responden diberi kode R001 sampai R100.
+5. Analisis dilakukan menggunakan metode SEM-PLS.
+6. Software analisis yang digunakan adalah SmartPLS.

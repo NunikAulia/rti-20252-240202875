@@ -1,4 +1,4 @@
-# Tahap 1 — Perancangan Arsitektur & Skema Database
+# Tahap 1 — Perancangan Desain Penelitian & Variabel
 
 **Status:** Selesai
 
@@ -6,94 +6,130 @@
 
 ## 1. Komponen Sistem
 
-1. **API Gateway (Go, Echo)** — menerima request, mem-parsing header JWT untuk mengambil `kid`, lalu meresolusi JWK terkait sebelum verifikasi signature.
-2. **Redis (L1 Cache, murni cache JWKS)**
-   - *Positive cache*: `jwks:kid:<kid>` → JWK (TTL pendek, mis. 5 menit) untuk kunci valid.
-   - *Negative cache*: `jwks:negative:<kid>` → marker (TTL pendek, mis. 60 detik) untuk `kid` yang tidak ditemukan — inti mitigasi flooding.
-   - Tidak menyimpan state rate-limit (lihat poin 3).
-3. **PostgreSQL (L2 / Source of Truth + Rate Limit Counter Permanen)** — menyimpan metadata kunci signing (`signing_keys`) dan counter rate-limit permanen (`rate_limit_counters`).
+1. **Objek Penelitian** Objek penelitian adalah UMKM bermitra Grab di Kabupaten Garut yang telah memanfaatkan e-commerce dalam aktivitas pemasaran dan penjualan.
+2. **Responden Penelitian**
+Responden penelitian berjumlah **100 pelaku UMKM** bermitra Grab di Kabupaten Garut.
+3. **Software Analisis** Pengolahan data dilakukan menggunakan **SmartPLS** dengan metode **Structural Equation Modeling - Partial Least Square (SEM-PLS)**.
 
-## 2. Alur Resolusi Kunci (Mitigasi)
+## 2. Alur Penelitian
 
-```
-Request masuk → Gateway parsing header JWT → ambil `kid`
-  │
-  ├─ Cek Redis positive cache (jwks:kid:<kid>)
-  │     ├─ HIT  → verifikasi signature → lanjut
-  │     └─ MISS ↓
-  │
-  ├─ Cek Redis negative cache (jwks:negative:<kid>)
-  │     ├─ HIT  → tolak langsung (401), tanpa query DB
-  │     └─ MISS ↓
-  │
-  ├─ UPSERT & cek rate_limit_counters di PostgreSQL (atomic, per client_ip + window)
-  │     ├─ EXCEEDED → tolak (429) + set Redis negative cache
-  │     └─ OK ↓
-  │
-  └─ Query PostgreSQL (signing_keys WHERE kid = ? AND is_active)
-        ├─ FOUND     → isi Redis positive cache → verifikasi signature
-        └─ NOT FOUND → set Redis negative cache → tolak (401)
-```
-
-Catatan: pada mode `CACHE_MODE=none` (baseline), langkah cek Redis dan rate-limit dilewati — setiap request langsung query `signing_keys` di PostgreSQL, mensimulasikan gateway tanpa mitigasi.
-
-Mekanisme **fail-closed**: jika Redis tidak dapat diakses, gateway tetap melanjutkan ke PostgreSQL (rate-limit counter tetap berfungsi karena bersumber dari PostgreSQL); jika PostgreSQL tidak dapat diakses, request ditolak (bukan diloloskan tanpa verifikasi).
-
-## 3. Skema Database (PostgreSQL)
-
-```sql
-CREATE TABLE signing_keys (
-    kid             VARCHAR(255) PRIMARY KEY,
-    kty             VARCHAR(10)  NOT NULL DEFAULT 'RSA',
-    alg             VARCHAR(10)  NOT NULL DEFAULT 'RS256',
-    use_type        VARCHAR(10)  NOT NULL DEFAULT 'sig',
-    n               TEXT         NOT NULL,   -- modulus, base64url
-    e               TEXT         NOT NULL,   -- exponent, base64url
-    is_active       BOOLEAN      NOT NULL DEFAULT TRUE,
-    created_at      TIMESTAMPTZ  NOT NULL DEFAULT now(),
-    expires_at      TIMESTAMPTZ,
-    revoked_at      TIMESTAMPTZ
-);
-
-CREATE INDEX idx_signing_keys_active ON signing_keys (kid) WHERE is_active = TRUE;
-
--- Counter rate-limit permanen (source of truth di PostgreSQL)
-CREATE TABLE rate_limit_counters (
-    client_ip       INET        NOT NULL,
-    window_start    TIMESTAMPTZ NOT NULL,
-    request_count   INTEGER     NOT NULL DEFAULT 0,
-    blocked_count   INTEGER     NOT NULL DEFAULT 0,
-    PRIMARY KEY (client_ip, window_start)
-);
+```text
+Identifikasi Masalah
+        │
+        ▼
+Studi Literatur
+        │
+        ▼
+Penentuan Variabel Penelitian
+        │
+        ▼
+Penyusunan Indikator & Kuesioner
+        │
+        ▼
+Penyebaran Kuesioner
+(100 Responden)
+        │
+        ▼
+Validasi dan Pembersihan Data
+        │
+        ▼
+Analisis Data Menggunakan SmartPLS
+        │
+        ▼
+Interpretasi Hasil
+        │
+        ▼
+Kesimpulan & Rekomendasi
 ```
 
-Upsert atomik untuk increment counter per request (window tetap, mis. 1 detik):
+---
 
-```sql
-INSERT INTO rate_limit_counters (client_ip, window_start, request_count)
-VALUES ($1, $2, 1)
-ON CONFLICT (client_ip, window_start)
-DO UPDATE SET request_count = rate_limit_counters.request_count + 1
-RETURNING request_count;
+## 3. Variabel Penelitian
+
+| Jenis Variabel | Nama Variabel | Kode | Keterangan |
+|----------------|---------------|------|------------|
+| Independen | Manfaat yang Dirasakan | X1 | Persepsi pelaku UMKM terhadap manfaat penggunaan e-commerce |
+| Independen | Kapabilitas Teknologi | X2 | Kemampuan pelaku UMKM dalam memanfaatkan teknologi digital |
+| Independen | Tingkat Adopsi E-Commerce | X3 | Tingkat penggunaan e-commerce dalam aktivitas usaha |
+| Dependen | Peningkatan Omzet UMKM | Y | Peningkatan pendapatan usaha setelah menggunakan e-commerce |
+| Kontrol | Lama Usaha | K1 | Lama UMKM menjalankan usaha |
+| Kontrol | Tingkat Pendidikan | K2 | Pendidikan terakhir pelaku UMKM |
+
+---
+
+## 4. Model Konseptual Penelitian
+
+```text
+                Manfaat yang Dirasakan (X1)
+                           │
+                           ▼
+Kapabilitas Teknologi (X2) ───────────────►
+                                           │
+                                           ▼
+                              Peningkatan Omzet UMKM (Y)
+                                           ▲
+                                           │
+            Tingkat Adopsi E-Commerce (X3)
 ```
 
-Jika `request_count` melebihi ambang batas, request ditolak dan `blocked_count` di-increment pada baris yang sama. Data ini bersifat permanen (tidak di-TTL) sehingga dapat dipakai langsung untuk analisis pola serangan pada Tahap 4.
+---
 
-Tabel log lookup tambahan (untuk cache hit/miss ratio) akan ditentukan pada Tahap 2 setelah skenario k6 lebih jelas.
+## 5. Hipotesis Penelitian
 
-## 4. Skema Redis (Murni L1 Cache JWKS)
+### H1
+Manfaat yang dirasakan berpengaruh positif dan signifikan terhadap peningkatan omzet UMKM bermitra Grab di Kabupaten Garut.
 
-| Key Pattern | Tipe | TTL | Tujuan |
-|---|---|---|---|
-| `jwks:kid:<kid>` | STRING (JSON JWK) | ~300s | Cache positif untuk kunci valid |
-| `jwks:negative:<kid>` | STRING (`"1"`) | ~60s | Cache negatif untuk `kid` tak dikenal |
+### H2
+Kapabilitas teknologi berpengaruh positif dan signifikan terhadap peningkatan omzet UMKM bermitra Grab di Kabupaten Garut.
 
-## 5. Keputusan Teknis (Final)
+### H3
+Tingkat adopsi e-commerce berpengaruh positif dan signifikan terhadap peningkatan omzet UMKM bermitra Grab di Kabupaten Garut.
 
-1. **Mode eksperimen**: satu binary gateway dengan toggle `CACHE_MODE=none|hybrid` — `none` = baseline tanpa cache/rate-limit, `hybrid` = arsitektur mitigasi penuh. Memastikan perbandingan baseline vs mitigated apple-to-apple untuk perhitungan $D_{perf}$.
-2. **Framework Gateway**: **Echo** (Go web framework).
-3. **Rate limiting**: counter permanen di **PostgreSQL** (`rate_limit_counters`, atomic UPSERT per `client_ip` + window). **Redis murni sebagai L1 cache JWKS** (positive & negative cache), tidak menyimpan state rate-limit.
-4. **Identity Service**: **PostgreSQL `signing_keys` langsung sebagai backing store** — tidak ada microservice tambahan; fokus eksperimen pada lapisan caching/rate-limit di Gateway.
-5. **Redis client**: `go-redis/redis/v9` (default standar Go ekosistem).
-6. **PostgreSQL driver**: `pgx` (native driver, performa baik, mendukung connection pooling via `pgxpool`).
-7. **Skenario issuer**: single issuer (disederhanakan) — dapat diperluas ke multi-issuer di penelitian lanjutan jika diperlukan.
+---
+
+## 6. Struktur Data Penelitian
+
+| Nama Kolom | Tipe Data | Keterangan |
+|-------------|-----------|------------|
+| ID_Responden | Integer | Nomor responden |
+| X1_1 | Integer | Indikator 1 Manfaat yang Dirasakan |
+| X1_2 | Integer | Indikator 2 Manfaat yang Dirasakan |
+| X1_3 | Integer | Indikator 3 Manfaat yang Dirasakan |
+| X2_1 | Integer | Indikator 1 Kapabilitas Teknologi |
+| X2_2 | Integer | Indikator 2 Kapabilitas Teknologi |
+| X2_3 | Integer | Indikator 3 Kapabilitas Teknologi |
+| X3_1 | Integer | Indikator 1 Tingkat Adopsi E-Commerce |
+| X3_2 | Integer | Indikator 2 Tingkat Adopsi E-Commerce |
+| X3_3 | Integer | Indikator 3 Tingkat Adopsi E-Commerce |
+| Y1 | Integer | Indikator 1 Peningkatan Omzet |
+| Y2 | Integer | Indikator 2 Peningkatan Omzet |
+| Y3 | Integer | Indikator 3 Peningkatan Omzet |
+| Lama_Usaha | Integer | Lama usaha (tahun) |
+| Pendidikan | Ordinal | Tingkat pendidikan responden |
+
+---
+
+## 7. Keputusan Teknis Penelitian
+
+1. Pendekatan penelitian menggunakan metode kuantitatif.
+2. Pengumpulan data dilakukan melalui kuesioner.
+3. Skala pengukuran menggunakan skala Likert 1–5.
+4. Jumlah responden sebanyak 100 UMKM.
+5. Analisis data menggunakan SEM-PLS.
+6. Software yang digunakan adalah SmartPLS.
+7. Analisis meliputi:
+   - Uji Validitas (Outer Loading, AVE)
+   - Uji Reliabilitas (Composite Reliability, Cronbach's Alpha)
+   - Evaluasi Inner Model (R²)
+   - Path Coefficient
+   - Bootstrapping
+   - T-Statistic
+   - P-Value
+   - Effect Size (f²)
+   - Predictive Relevance (Q²)
+
+---
+
+## Output Tahap 1
+
+Dokumen ini menjadi dasar penyusunan instrumen penelitian, pengumpulan data, dan analisis menggunakan metode SEM-PLS pada penelitian mengenai pengaruh e-commerce terhadap peningkatan omzet UMKM bermitra Grab di Kabupaten Garut.
