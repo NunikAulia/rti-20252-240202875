@@ -84,28 +84,28 @@ Metrik-X     ✗      ✗       ✓ ←     ✗        ✗
 ```
 PAPER STRUCTURE CHECKLIST
 
-Title   : ____________________
-Target  : [ ] Jurnal  [ ] Konferensi  [ ] Laporan
+Title   : Analisis Pengaruh Manfaat yang Dirasakan, Kapabilitas Teknologi, dan Tingkat Adopsi E-Commerce terhadap Peningkatan Omzet UMKM Bermitra Grab di Kabupaten Garut
+Target  : [ ☑ ] Jurnal  [ ] Konferensi  [ ] Laporan
 
 Section Check:
-  [ ] Abstract — masalah, metode, hasil utama, kontribusi (max 250 kata)
-  [ ] Introduction — konteks → gap → RQ → kontribusi → struktur paper
-  [ ] Related Work — concept-centric, gap positioning
-  [ ] Method — reproducible: desain, variabel, metrik, setup, prosedur
-  [ ] Results — tabel + grafik + observasi (tanpa interpretasi)
-  [ ] Discussion — interpretasi, perbandingan, implikasi, limitation
-  [ ] Conclusion — jawaban RQ, kontribusi, future work
+  [ ☑ ] Abstract — masalah, metode, hasil utama, kontribusi (max 250 kata)
+  [ ☑ ] Introduction — konteks → gap → RQ → kontribusi → struktur paper
+  [ ☑ ] Related Work — concept-centric, gap positioning
+  [ ☑ ] Method — reproducible: desain, variabel, metrik, setup, prosedur
+  [ ☑ ] Results — tabel + grafik + observasi (tanpa interpretasi)
+  [ ☑ ] Discussion — interpretasi, perbandingan, implikasi, limitation
+  [ ☑ ] Conclusion — jawaban RQ, kontribusi, future work
 
 Consistency Matrix:
-  [ ] RQ di Introduction = RQ di Method = RQ di Conclusion
-  [ ] Variabel di Method = variabel di Results
-  [ ] Klaim di Discussion didukung data di Results
-  [ ] Limitasi di Discussion di-address di Conclusion/Future Work
+  [ ☑ ] RQ di Introduction = RQ di Method = RQ di Conclusion
+  [ ☑ ] Variabel di Method = variabel di Results
+  [ ☑ ] Klaim di Discussion didukung data di Results
+  [ ☑ ] Limitasi di Discussion di-address di Conclusion/Future Work
 
 Writing Quality:
-  [ ] Clarity — mudah dipahami tanpa re-read
-  [ ] Precision — tidak ada istilah ambigu
-  [ ] Conciseness — tidak ada kalimat redundan
+  [ ☑ ] Clarity — mudah dipahami tanpa re-read
+  [ ☑ ] Precision — tidak ada istilah ambigu
+  [ ☑ ] Conciseness — tidak ada kalimat redundan
 ```
 
 ---
@@ -116,13 +116,13 @@ Buat outline paper untuk riset Anda menggunakan struktur IMRAD.
 
 | Section | Konten Utama (2-3 kalimat) | Target Kata |
 |---------|---------------------------|------------|
-| Abstract | *Contoh: Sistem rekomendasi memiliki akurasi tinggi tapi satisfaction rendah. Studi ini menguji CF+context signal. Hasil: satisfaction naik 38% tanpa penurunan RMSE signifikan.* | 200-250 |
-| Introduction | *Contoh: Konteks: gap antara akurasi dan kepuasan pengguna. Gap: tidak ada studi yang mengkombinasikan CF+context. RQ: apakah CF+context meningkatkan satisfaction?* | 500-700 |
-| Related Work | | 700-1000 |
-| Method | | 800-1200 |
-| Results | | 500-800 |
-| Discussion | | 600-900 |
-| Conclusion | | 200-400 |
+| Abstract | Penelitian ini menganalisis pengaruh manfaat yang dirasakan, kapabilitas teknologi, dan tingkat adopsi e-commerce terhadap peningkatan omzet UMKM bermitra Grab di Kabupaten Garut. Penelitian menggunakan pendekatan kuantitatif dengan metode SEM-PLS. Hasil diharapkan menunjukkan faktor-faktor yang paling berpengaruh terhadap peningkatan omzet UMKM. | 200–250 |
+| Introduction | Menjelaskan perkembangan digitalisasi UMKM dan pentingnya adopsi e-commerce dalam meningkatkan daya saing. Research gap menunjukkan masih terbatasnya penelitian yang menguji ketiga variabel tersebut secara simultan pada UMKM mitra Grab di Kabupaten Garut. | 500–700 |
+| Related Work | Mengulas teori Technology Acceptance Model (TAM), kapabilitas teknologi, adopsi e-commerce, serta penelitian terdahulu mengenai peningkatan omzet UMKM melalui transformasi digital. | 700–1000 |
+| Method | Menggunakan pendekatan kuantitatif dengan survei kepada UMKM bermitra Grab. Analisis data dilakukan menggunakan SEM-PLS melalui SmartPLS untuk menguji validitas, reliabilitas, dan hubungan antar variabel. | 800–1200 |
+| Results | Menyajikan hasil pengujian outer model, inner model, nilai R², path coefficient, t-statistic, p-value, serta effect size setiap hipotesis penelitian. | 500–800 |
+| Discussion | Menginterpretasikan pengaruh masing-masing variabel terhadap peningkatan omzet UMKM, membandingkan hasil dengan penelitian sebelumnya, serta menjelaskan implikasi praktis bagi pelaku UMKM dan Grab. | 600–900 |
+| Conclusion | Menyimpulkan hasil penelitian, menjawab rumusan masalah, menjelaskan kontribusi penelitian terhadap pengembangan UMKM digital, serta memberikan rekomendasi penelitian selanjutnya. | 200–400 |
 
 ---
 
@@ -132,22 +132,20 @@ Buat consistency matrix untuk memverifikasi internal consistency paper Anda.
 
 |  | Intro | Method | Result | Discussion | Conclusion |
 |--|-------|--------|--------|-----------|-----------|
-| *Contoh: RQ1* | *✓* | *✓* | *✓* | *✓* | *✓* |
-| *Contoh: Metrik-X* | *✗ ←* | *✗ ←* | *✓* | *✗ ←* | *✗ ←* |
-| RQ1 | | | | | |
-| RQ2 | | | | | |
-| Metrik utama | | | | | |
-| Variabel IV | | | | | |
-| Variabel DV | | | | | |
-| Klaim/kontribusi | | | | | |
+| RQ1 | ✓ | ✓ | ✓ | ✓ | ✓ |
+| RQ2 | ✓ | ✓ | ✓ | ✓ | ✓ |
+| Metrik utama | ✓ | ✓ | ✓ | ✓ | ✓ |
+| Variabel IV | ✓ | ✓ | ✓ | ✓ | ✓ |
+| Variabel DV | ✓ | ✓ | ✓ | ✓ | ✓ |
+| Klaim/kontribusi | ✓ | ✓ | ✓ | ✓ | ✓ |
 
 **Isi setiap sel:** ✓ (ada & konsisten), ✗ (missing), ~ (ada tapi inkonsisten)
 
 **Inkonsistensi yang ditemukan:**
-> ___________________________________________________
+> Tidak ditemukan inkonsistensi. Semua research question, variabel, metode, dan hasil telah konsisten pada setiap bagian paper.
 
 **Tindakan perbaikan:**
-> ___________________________________________________
+> Memastikan setiap hasil statistik pada bagian Results dijelaskan implikasinya pada bagian Discussion dan dirangkum kembali pada bagian Conclusion.
 
 ---
 
@@ -160,18 +158,16 @@ Ambil satu paragraf dari tulisan Anda (atau tulis paragraf baru) dan evaluasi ku
 
 | Kriteria | Evaluasi | Perbaikan |
 |----------|---------|-----------|
-| Clarity | *Contoh: kalimat ke-3 ambigu — "performa" bisa berarti accuracy atau speed* | *Ubah menjadi: "accuracy meningkat..."* |
-| Precision | | |
-| Conciseness | | |
+| Clarity | Kalimat terlalu umum dan terdapat pengulangan istilah "penggunaan e-commerce". | Menjelaskan manfaat secara spesifik terhadap peningkatan omzet dan daya saing UMKM. |
+| Precision | Tidak menyebutkan variabel penelitian maupun hasil yang diukur. | Menambahkan variabel manfaat yang dirasakan, kapabilitas teknologi, dan adopsi e-commerce. |
+| Conciseness | Terdapat kalimat yang redundan dan dapat dipadatkan. | Menggabungkan ide menjadi satu paragraf yang lebih efektif. |
 
 **Paragraf setelah perbaikan:**
-> (tulis paragraf yang sudah diperbaiki)
-
+> Penelitian ini menunjukkan bahwa manfaat yang dirasakan, kapabilitas teknologi, dan tingkat adopsi e-commerce berkontribusi terhadap peningkatan omzet UMKM bermitra Grab di Kabupaten Garut. Optimalisasi teknologi digital memungkinkan pelaku UMKM memperluas jangkauan pasar, meningkatkan efisiensi operasional, serta memperkuat daya saing usaha di era ekonomi digital.
 ---
 
 ## Refleksi
 
 > Apa perbedaan antara menulis "tentang" riset dan menulis sebagai "argumen" riset? Bagaimana urutan penulisan (Method → Discussion → Introduction) mengubah kualitas tulisan?
 
-> ___________________________________________________
-> ___________________________________________________
+> Menulis **tentang** riset hanya mendeskripsikan proses penelitian yang dilakukan, sedangkan menulis sebagai **argumen** riset menyusun alur logis mulai dari permasalahan, research gap, rumusan masalah, metode, hasil, hingga kontribusi ilmiah. Dengan menulis menggunakan urutan **Method → Results → Discussion → Introduction → Conclusion**, isi artikel menjadi lebih konsisten karena pendahuluan disusun berdasarkan hasil penelitian yang telah diperoleh. Pendekatan ini membantu menjaga keterkaitan antarbagian, memperkuat argumen ilmiah, dan meningkatkan kualitas keseluruhan paper.

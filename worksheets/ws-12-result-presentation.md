@@ -65,25 +65,35 @@ Keduanya **saling melengkapi**:
 ```
 RESULT PRESENTATION PLAN
 
-Research Question : ____________________
-Metrik Utama      : ____________________
+Research Question : Apakah manfaat yang dirasakan, kapabilitas teknologi, dan tingkat adopsi e-commerce berpengaruh terhadap peningkatan omzet UMKM bermitra Grab di Kabupaten Garut?
+
+Metrik Utama      : 
+  - Path Coefficient
+  - T-Statistic
+  - P-Value
+  - R-Square
+  - f-square
 
 Tabel Hasil:
-| Skenario | Metrik 1 (mean ± std) | Metrik 2 (mean ± std) | n |
-|----------|----------------------|----------------------|---|
-|          |                      |                      |   |
+| Variabel | Path Coefficient (Mean ± Std) | P-Value | n |
+|----------|-------------------------------:|--------:|--:|
+| Manfaat yang Dirasakan → Peningkatan Omzet | 0.42 ± 0.08 | <0.001 | 98 |
+| Kapabilitas Teknologi → Peningkatan Omzet | 0.35 ± 0.07 | 0.002 | 98 |
+| Tingkat Adopsi E-Commerce → Peningkatan Omzet | 0.47 ± 0.09 | <0.001 | 98 |
 
 Visualisasi yang Direncanakan:
 | # | Jenis Grafik | Pesan Utama | Metrik |
 |---|-------------|-------------|--------|
-| 1 |             |             |        |
-| 2 |             |             |        |
+|---:|--------------|-------------|---------|
+| 1 | Bar Chart + Error Bar | Membandingkan besarnya pengaruh setiap variabel terhadap peningkatan omzet | Path Coefficient ± Std |
+| 2 | Box Plot | Menunjukkan distribusi skor jawaban responden pada setiap variabel | Nilai Likert |
+| 3 | Scatter Plot | Hubungan tingkat adopsi e-commerce dengan peningkatan omzet | Skor Adopsi vs Omzet |
 
 Bias Check:
-  [ ] Y-axis mulai dari 0 (atau dijustifikasi)
-  [ ] Error bar/CI ditampilkan
-  [ ] Semua data disertakan (tidak cherry-picked)
-  [ ] Tidak menggunakan 3D tanpa alasan
+  [ ☑ ] Y-axis mulai dari 0 (atau dijustifikasi)
+  [ ☑ ] Error bar/CI ditampilkan
+  [ ☑ ] Semua data disertakan (tidak cherry-picked)
+  [ ☑ ] Tidak menggunakan 3D tanpa alasan
 ```
 
 ---
@@ -92,17 +102,17 @@ Bias Check:
 
 Buat tabel hasil eksperimen Anda (boleh dengan data simulasi jika belum punya data riil).
 
-| Skenario | Metrik 1 (mean ± std) | Metrik 2 (mean ± std) | n |
-|----------|----------------------|----------------------|---|
-| *Contoh: BERT-base* | *88.4 ± 1.2%* | *45.2 ± 3.1 min* | *10* |
-| | | | |
-| | | | |
+| Variabel | Path Coefficient (Mean ± Std) | P-Value | n |
+|----------|-------------------------------:|--------:|--:|
+| Tingkat Adopsi E-Commerce | 0.47 ± 0.09 | <0.001 | 98 |
+| Manfaat yang Dirasakan | 0.42 ± 0.08 | <0.001 | 98 |
+| Kapabilitas Teknologi | 0.35 ± 0.07 | 0.002 | 98 |
 
 **Checklist tabel:**
-- [ ] Self-contained (judul jelas, satuan ada, N tercantum)
-- [ ] Mean ± std (bukan single number)
-- [ ] Diurutkan berdasarkan metrik utama
-- [ ] Format konsisten di semua baris
+- [ ☑ ] Judul, satuan, dan jumlah sampel (N) tercantum.
+- [ ☑ ] Mean ± std (bukan single number).
+- [ ☑ ] Diurutkan berdasarkan nilai Path Coefficient.
+- [ ☑ ] Format konsisten di semua baris.
 
 ---
 
@@ -110,11 +120,11 @@ Buat tabel hasil eksperimen Anda (boleh dengan data simulasi jika belum punya da
 
 Rencanakan 2-3 grafik untuk menyajikan data dari Latihan 1. Setiap grafik = satu pesan.
 
-| # | Jenis Grafik | Pesan | Data yang Digunakan |
+| # | Jenis Grafik | Pesan  | Data yang Digunakan |
 |---|-------------|-------|---------------------|
-| 1 | *Contoh: Bar chart + error bar* | *Perbandingan accuracy antar 3 model* | *Mean accuracy ± std* |
-| 2 | *Box plot* | *Distribusi F1 per model* | *Semua run F1* |
-| 3 | *Scatter plot* | *Trade-off accuracy vs training time* | *Mean accuracy vs mean time* |
+| 1 | Bar Chart + Error Bar | Membandingkan pengaruh ketiga variabel independen terhadap peningkatan omzet | Path Coefficient ± Std |
+| 2 | Box Plot | Menampilkan penyebaran jawaban responden | Skor Likert |
+| 3 | Scatter Plot | Menunjukkan hubungan tingkat adopsi e-commerce dengan peningkatan omzet | Skor Variabel X dan Y |
 
 ---
 
@@ -126,14 +136,14 @@ Evaluasi visualisasi berikut untuk bias (skenario dari contoh):
 
 | Pertanyaan | Jawaban |
 |-----------|---------|
-| Apakah Y-axis menyesatkan? | *Contoh: Ya — A terlihat 2× B padahal beda 0.4%* |
-| Apakah error bar ditampilkan? | |
-| Apakah semua kondisi ditampilkan? | |
-| Apa solusinya? | |
+| Apakah Y-axis menyesatkan? | Ya. Jika sumbu Y dimulai dari angka tinggi (misalnya 90), perbedaan kecil akan terlihat sangat besar. |
+| Apakah error bar ditampilkan? | Harus ditampilkan agar variasi data terlihat. |
+| Apakah semua kondisi ditampilkan? | Ya, seluruh hasil penelitian harus ditampilkan. |
+| Apa solusinya? | Gunakan sumbu Y mulai dari 0, tampilkan error bar, dan sajikan seluruh data secara lengkap. |
 
 **Evaluasi grafik Anda sendiri dari Latihan 2:**
-- [ ] Semua bias check lulus
-- [ ] Ada yang perlu diperbaiki: ____
+- [ x ] Semua bias check lulus
+- [ ] Ada yang perlu diperbaiki: Tidak ada. Grafik telah memenuhi prinsip visualisasi data yang baik, yaitu menggunakan sumbu Y yang sesuai, menampilkan error bar, menyajikan seluruh data, dan tidak menggunakan efek 3D yang dapat menyesatkan pembaca.
 
 ---
 
@@ -141,5 +151,4 @@ Evaluasi visualisasi berikut untuk bias (skenario dari contoh):
 
 > Mengapa tabel dan grafik keduanya diperlukan — tidak cukup salah satu saja? Pernahkah Anda membuat grafik yang (tanpa sengaja) menyesatkan?
 
-> ___________________________________________________
-> ___________________________________________________
+> Tabel dan grafik memiliki fungsi yang saling melengkapi dalam penyajian hasil penelitian. Tabel menyajikan informasi numerik secara rinci sehingga memudahkan pembaca mengetahui nilai setiap indikator secara tepat. Grafik membantu pembaca memahami pola, tren, dan perbandingan antarvariabel dengan lebih cepat. Oleh karena itu, penggunaan tabel dan grafik secara bersamaan akan menghasilkan penyajian hasil penelitian yang lebih informatif, mudah dipahami, dan tetap akurat.
