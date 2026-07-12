@@ -86,31 +86,35 @@ Prediksi pertanyaan berdasarkan kategori:
 DEFENSE PREPARATION
 
 Slide Deck Plan:
-  Total slides   : ____ (target: 10-12 konten + title/closing)
-  Time per slide : ~2 min
-  Total time     : ____ menit
+  Total slides   : 9 slide
+  Time per slide :  ±1,5–2 menit
+  Total time     : 15 menit
 
 Slide Outline:
 | # | Pesan Utama | Visual | Waktu |
 |---|-------------|--------|-------|
-| 1 | Title       |        | 30s   |
-| 2 | Problem     |        | 2min  |
-| 3 | Gap + RQ    |        | 2min  |
-| ..|             |        |       |
+| 1 | **Title** - Judul penelitian, nama peneliti, dosen pembimbing, dan identitas universitas. | Cover penelitian dengan logo universitas | 30 detik |
+| 2 | **Problem** - Menjelaskan perkembangan digitalisasi UMKM, pentingnya e-commerce bagi UMKM, serta permasalahan peningkatan omzet UMKM mitra Grab di Kabupaten Garut. | Infografik perkembangan e-commerce dan UMKM | 2 menit |
+| 3 | **Gap + Research Question** - Menjelaskan research gap dari penelitian terdahulu, rumusan masalah, serta tujuan penelitian. | Tabel penelitian terdahulu dan diagram research gap | 2 menit |
+| 4 | **Conceptual Framework & Hypothesis** - Menjelaskan variabel penelitian (Perceived Benefits, Technology Capability, E-Commerce Adoption, dan Omzet) beserta hipotesis penelitian. | Kerangka konseptual dan diagram hubungan variabel | 2 menit |
+| 5 | **Method** - Menjelaskan metode kuantitatif, populasi, sampel, teknik pengambilan sampel, instrumen penelitian, serta analisis menggunakan SEM-PLS. | Flowchart metodologi penelitian | 2 menit |
+| 6 | **Results** - Menampilkan hasil uji validitas, reliabilitas, R², serta pengujian hipotesis menggunakan SmartPLS. | Tabel hasil SmartPLS dan grafik Path Coefficient | 2 menit |
+| 7 | **Discussion** - Menginterpretasikan hasil penelitian dan membandingkan dengan teori maupun penelitian terdahulu. | Diagram hubungan hasil penelitian dengan teori | 2 menit |
+| 8 | **Conclusion & Implication** - Menyampaikan kesimpulan penelitian, implikasi praktis bagi UMKM, keterbatasan penelitian, serta saran penelitian selanjutnya. | Ringkasan poin-poin utama | 2 menit |
 
 Anticipatory Defense Matrix:
 | Kategori | Pertanyaan Potensial | Jawaban (CER) |
 |----------|---------------------|---------------|
-| Problem  |                     |               |
-| Gap      |                     |               |
-| Method   |                     |               |
-| Results  |                     |               |
-| Generalization |               |               |
+| **Problem** | Mengapa penelitian ini penting dilakukan? | **Claim:** Digitalisasi menjadi faktor penting dalam meningkatkan daya saing UMKM. **Evidence:** Banyak UMKM telah memanfaatkan platform Grab dan e-commerce, namun peningkatan omzet belum merata. **Reasoning:** Penelitian ini bertujuan mengidentifikasi faktor-faktor yang memengaruhi peningkatan omzet sehingga dapat menjadi dasar pengambilan keputusan bagi pelaku UMKM. |
+| **Gap** | Apa perbedaan penelitian ini dengan penelitian sebelumnya? | **Claim:** Penelitian menggabungkan variabel manfaat yang dirasakan, kapabilitas teknologi, dan tingkat adopsi e-commerce dalam satu model SEM-PLS. **Evidence:** Penelitian terdahulu umumnya hanya menguji sebagian variabel secara terpisah. **Reasoning:** Integrasi ketiga variabel memberikan pemahaman yang lebih komprehensif mengenai peningkatan omzet UMKM. |
+| **Method** | Mengapa menggunakan metode SEM-PLS? | **Claim:** SEM-PLS sesuai untuk menguji hubungan beberapa variabel laten secara simultan. **Evidence:** Data diperoleh melalui kuesioner dengan skala Likert dan jumlah sampel relatif terbatas. **Reasoning:** SEM-PLS mampu menguji validitas, reliabilitas, serta hubungan struktural secara bersamaan. |
+| **Results** | Apa hasil paling penting dari penelitian ini? | **Claim:** Tingkat adopsi e-commerce memberikan pengaruh paling besar terhadap peningkatan omzet UMKM. **Evidence:** Nilai Path Coefficient dan hasil uji hipotesis menunjukkan pengaruh positif dan signifikan. **Reasoning:** Semakin tinggi tingkat pemanfaatan e-commerce, semakin besar peluang peningkatan penjualan dan omzet UMKM. |
+| **Generalization** | Apakah hasil penelitian dapat diterapkan pada seluruh UMKM di Indonesia? | **Claim:** Hasil penelitian dapat menjadi referensi namun belum dapat digeneralisasikan sepenuhnya. **Evidence:** Penelitian hanya dilakukan pada UMKM mitra Grab di Kabupaten Garut. **Reasoning:** Perbedaan karakteristik wilayah, jenis usaha, dan tingkat digitalisasi memerlukan penelitian lanjutan di daerah lain. |
 
 Latihan:
-  Latihan 1: [tanggal] — [catatan timing & feedback]
-  Latihan 2: [tanggal] — [catatan timing & feedback]
-  Latihan 3: [tanggal] — [catatan timing & feedback]
+  Latihan 1: [10 Juli 2026] — [16 menit & Penjelasan latar belakang masih terlalu panjang, Perlu memperjelas research gap, Kurangi membaca slide dan lebih banyak menjelaskan.]
+  Latihan 2: [11 Juli 2026] — [14 menit & Penyampaian lebih terstruktur, Hasil penelitian sudah dijelaskan dengan baik, Tambahkan penjelasan mengenai alasan memilih SEM-PLS.]
+  Latihan 3: [12 Juli 2026] — [14 menit & Penyampaian lebih percaya diri, Jawaban saat sesi tanya jawab sudah berdasarkan data penelitian, Perlu lebih menguasai bagian keterbatasan penelitian dan generalisasi hasil.]
 ```
 
 ---
@@ -121,17 +125,18 @@ Rencanakan presentasi 15 menit untuk riset Anda.
 
 | # | Pesan Utama | Visual yang Digunakan | Waktu |
 |---|-------------|----------------------|-------|
-| 1 | *Contoh: Judul + konteks — rekomendasi vs kepuasan* | *Title slide, gambar sistem* | *1 min* |
-| 2 | *Contoh: Problem — RMSE tinggi tapi satisfaction rendah (45/100)* | *Bar chart: satisfaction vs RMSE per sistem* | *2 min* |
-| 3 | *Contoh: Gap + RQ — belum ada CF+context untuk satisfaction* | *Tabel gap literatur* | *1.5 min* |
-| 4 | | | |
-| 5 | | | |
-| 6 | | | |
-| 7 | | | |
-| 8 | | | |
-| 9 | | | |
+| 1 | Judul penelitian dan identitas peneliti | Cover penelitian | 1 menit |
+| 2 | Latar belakang dan pentingnya penelitian | Infografik perkembangan e-commerce UMKM | 2 menit |
+| 3 | Research gap, rumusan masalah, dan tujuan penelitian | Tabel research gap | 1,5 menit |
+| 4 | Metode penelitian | Diagram alur SEM-PLS | 2 menit |
+| 5 | Hasil utama penelitian | Tabel Path Coefficient, R², dan P-Value | 2 menit |
+| 6 | Visualisasi hasil | Bar chart pengaruh variabel | 2 menit |
+| 7 | Interpretasi hasil dan implikasi | Diagram hubungan antarvariabel | 2 menit |
+| 8 | Keterbatasan penelitian dan penelitian selanjutnya | Bullet point limitation | 1,5 menit |
+| 9 | Kesimpulan dan kontribusi penelitian | Ringkasan hasil penelitian | 1 menit |
 
-**Total waktu estimasi:** ____ menit
+
+**Total waktu estimasi:** 15 menit
 
 ---
 
@@ -141,11 +146,11 @@ Prediksi 5 pertanyaan yang mungkin diajukan penguji, lalu siapkan jawaban CER.
 
 | # | Kategori | Pertanyaan | Claim | Evidence | Reasoning |
 |---|----------|-----------|-------|----------|-----------|
-| 1 | *Problem* | *Contoh: Mengapa fokus kepuasan, bukan akurasi?* | *Akurasi tinggi tidak menjamin kepuasan* | *Survey: 45/100 satisfaction meski RMSE 0.87* | *Gap antara metrik teknis dan pengalaman pengguna* |
-| 2 | *Method* | *Contoh: Mengapa hanya 3 dataset?* | *3 dataset mewakili variasi: small-clean, medium-clean, medium-noisy* | *Tabel karakteristik dataset di Bab Method* | *Generalisasi perlu validasi lanjut — tercatat sebagai limitasi* |
-| 3 | | | | | |
-| 4 | | | | | |
-| 5 | | | | | |
+| 1 | Problem | Mengapa memilih UMKM Grab di Kabupaten Garut? | UMKM Grab merupakan contoh implementasi e-commerce yang berkembang. | Sampel penelitian terdiri dari 100 UMKM mitra Grab di Kabupaten Garut. | Penelitian sesuai dengan tujuan menganalisis pengaruh e-commerce terhadap omzet. |
+| 2 | Method | Mengapa menggunakan SEM-PLS? | SEM-PLS sesuai untuk penelitian dengan beberapa variabel laten. | Data diperoleh dari kuesioner Likert dengan jumlah sampel terbatas. | SEM-PLS mampu menguji validitas, reliabilitas, dan hubungan antarvariabel secara simultan. |
+| 3 | Results | Mengapa tingkat adopsi e-commerce memiliki pengaruh terbesar? | Tingkat adopsi menunjukkan intensitas penggunaan teknologi digital. | Nilai Path Coefficient tertinggi berasal dari variabel tersebut. | Semakin tinggi tingkat adopsi, semakin besar peluang peningkatan omzet. |
+| 4 | Results | Bagaimana jika ada hipotesis yang tidak signifikan? | Hasil tetap merupakan temuan ilmiah. | Dijelaskan dalam bagian keterbatasan penelitian. | Hasil yang tidak signifikan tetap memberikan kontribusi bagi penelitian selanjutnya. |
+| 5 | Generalization | Apakah hasil penelitian dapat diterapkan di daerah lain? | Dapat menjadi referensi, namun perlu penelitian lanjutan. | Penelitian hanya dilakukan di Kabupaten Garut. | Kondisi UMKM di daerah lain dapat berbeda sehingga perlu validasi tambahan. |
 
 ---
 
@@ -154,15 +159,16 @@ Prediksi 5 pertanyaan yang mungkin diajukan penguji, lalu siapkan jawaban CER.
 Minta teman/kolega mengajukan 3 pertanyaan tentang riset Anda. Catat pertanyaan dan evaluasi jawaban Anda.
 
 | # | Pertanyaan | Jawaban Saya | Evaluasi |
-|---|-----------|-------------|---------|| *1* | *Contoh: "Mengapa tidak membandingkan dengan metode Y?"* | *Contoh: "Karena Y memerlukan dataset labeled yang tidak tersedia. Disebutkan sebagai limitasi di halaman X."* | *[✓] Direct [✓] Data-based [✓] Honest* || 1 | | | [ ] Direct [ ] Data-based [ ] Honest |
-| 2 | | | [ ] Direct [ ] Data-based [ ] Honest |
-| 3 | | | [ ] Direct [ ] Data-based [ ] Honest |
+|---|-----------|-------------|---------|
+| 1 | Mengapa menggunakan metode SEM-PLS? | Karena penelitian menguji hubungan beberapa variabel laten menggunakan data kuesioner dengan jumlah sampel yang relatif terbatas sehingga SEM-PLS menjadi metode yang sesuai. | ✔ Direct ✔ Data-based ✔ Honest |
+| 2 | Apa kontribusi utama penelitian ini? | Penelitian menjelaskan pengaruh manfaat yang dirasakan, kapabilitas teknologi, dan tingkat adopsi e-commerce terhadap peningkatan omzet UMKM sehingga dapat menjadi dasar pengembangan strategi digitalisasi UMKM. | ✔ Direct ✔ Data-based ✔ Honest |
+| 3 | Apa keterbatasan penelitian? | Penelitian hanya dilakukan pada UMKM mitra Grab di Kabupaten Garut sehingga hasilnya belum dapat digeneralisasikan ke seluruh UMKM di Indonesia. | ✔ Direct ✔ Data-based ✔ Honest |
 
 **Pertanyaan yang paling sulit dijawab:**
-> ___________________________________________________
+> Apakah hasil penelitian ini dapat diterapkan pada seluruh jenis UMKM di Indonesia?
 
 **Apa yang perlu disiapkan lebih baik:**
-> ___________________________________________________
+> Menyiapkan referensi penelitian dari berbagai daerah di Indonesia sebagai pembanding agar argumen mengenai generalisasi hasil penelitian lebih kuat.
 
 ---
 
@@ -171,7 +177,7 @@ Minta teman/kolega mengajukan 3 pertanyaan tentang riset Anda. Catat pertanyaan 
 > Dari seluruh proses WS-01 sampai WS-16 — dari paradigma riset hingga presentasi — bagian mana yang paling mengubah cara Anda berpikir tentang riset? Apa satu hal yang akan selalu Anda terapkan di riset berikutnya?
 
 **Insight terbesar:**
-> ___________________________________________________
+> Penelitian yang baik harus memiliki keterkaitan yang jelas antara identifikasi masalah, tujuan penelitian, metode yang digunakan, analisis data, hingga penyajian hasil. Selain menghasilkan data, peneliti juga harus mampu mempertanggungjawabkan setiap keputusan metodologis yang diambil.
 
 **Yang akan selalu diterapkan:**
-> ___________________________________________________
+> Saya akan selalu memulai penelitian dengan menyusun research gap dan research question yang jelas, memilih metode analisis yang sesuai, mendokumentasikan seluruh proses penelitian secara sistematis, serta menyajikan hasil berdasarkan bukti empiris sehingga penelitian mudah dipahami dan dapat dipertanggungjawabkan.
