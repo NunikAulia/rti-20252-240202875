@@ -1,0 +1,13 @@
+# Abstrak / Abstract (01-abstrak.md)
+
+## ABSTRAK
+Penelitian ini bertujuan untuk menganalisis pengaruh manfaat yang dirasakan, kapabilitas teknologi, dan tingkat adopsi e-commerce terhadap peningkatan omzet Usaha Mikro, Kecil, dan Menengah (UMKM) yang bermitra dengan Grab di Kabupaten Garut[cite: 5]. Pendekatan kuantitatif deskriptif diterapkan dengan menggunakan instrumen kuesioner skala Likert 1–5 yang disebarkan kepada 100 pelaku usaha[cite: 5]. Pembersihan data melalui listwise deletion menghasilkan 98 sampel valid yang kemudian dianalisis menggunakan metode Structural Equation Modeling–Partial Least Square (SEM-PLS) melalui SmartPLS 4.0[cite: 5]. Hasil pengujian struktural menunjukkan bahwa manfaat yang dirasakan, kapabilitas teknologi, dan tingkat adopsi e-commerce berpengaruh positif dan signifikan terhadap peningkatan omzet UMKM[cite: 5]. Tingkat adopsi e-commerce terbukti sebagai faktor yang memberikan kontribusi paling dominan[cite: 5]. Kesimpulan penelitian menegaskan bahwa akselerasi transformasi digital melalui optimalisasi platform niaga elektronik menjadi determinan utama dalam mendongkrak kinerja finansial dan daya saing pelaku usaha di era ekonomi digital[cite: 5].
+
+**Kata Kunci:** E-Commerce; Kapabilitas Teknologi; Omzet UMKM; SEM-PLS; Grab[cite: 5].
+
+---
+
+## ABSTRACT
+This study aims to analyze the influence of perceived benefits, technology capability, and e-commerce adoption levels on the turnover growth of micro, small, and medium enterprises (MSMEs) partnering with Grab in Garut Regency[cite: 5]. A descriptive quantitative approach was applied using a 1–5 Likert scale questionnaire distributed to 100 business actors[cite: 5]. Data cleaning via listwise deletion resulted in 98 valid samples, which were subsequently analyzed using Structural Equation Modeling–Partial Least Square (SEM-PLS) via SmartPLS 4.0[cite: 5]. The structural test results demonstrate that perceived benefits, technology capability, and e-commerce adoption levels exert a positive and significant effect on MSME turnover growth[cite: 5]. The level of e-commerce adoption is proven to be the most dominant contributing factor[cite: 5]. The study concludes that accelerating digital transformation through the optimization of electronic commerce platforms serves as a key determinant in boosting financial performance and competitiveness of business actors in the digital economy era[cite: 5].
+
+**Keywords:** E-Commerce; Technology Capability; MSME Turnover; SEM-PLS; Grab[cite: 5].

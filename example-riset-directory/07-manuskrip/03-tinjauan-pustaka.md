@@ -1,0 +1,7 @@
+# Bab II: Tinjauan Pustaka (03-tinjauan-pustaka.md)
+
+## Technology Acceptance Model (TAM) & Perceived Benefits ($X_1$)
+Technology Acceptance Model (TAM) menjelaskan bahwa adopsi sistem teknologi baru ditentukan oleh persepsi kegunaan (*perceived usefulness*) dan kemudahan penggunaan (*perceived ease of use*)[cite: 5]. Dalam konteks kemitraan Grab di Garut, konstruk ini direpresentasikan melalui *Manfaat yang Dirasakan* ($X_1$), di mana pelaku usaha meyakini bahwa keterlibatan platform digital mampu memperluas jangkauan pasar eksternal dan meningkatkan efisiensi operasional operasional logistik secara berkala[cite: 5].
+
+## Resource-Based View (RBV) & Kapabilitas Internal ($X_2$, $X_3$)
+Perspektif Resource-Based View (RBV) menegaskan bahwa perusahaan dapat mencapai keunggulan kompetitif yang berkelanjutan apabila memiliki serta mengelola aset strategis internal yang berharga, langka, unik, dan tidak mudah ditiru[cite: 5]. Komponen aset tersebut dioperasionalisasikan menjadi *Kapabilitas Teknologi* ($X_2$) dalam wujud literasi digital dan kecukupan infrastruktur operasional, serta *Tingkat Adopsi E-Commerce* ($X_3$) berupa kematangan integrasi fitur niaga digital harian (pembayaran nontunai dan pemanfaatan data analitik performa)[cite: 5]. Sinergi kedua kapabilitas internal ini menjadi pondasi dalam mendorong daya saing finansial yang tecermin langsung pada indikator *Peningkatan Omzet UMKM* ($Y$)[cite: 5].

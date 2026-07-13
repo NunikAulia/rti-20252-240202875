@@ -30,9 +30,9 @@ Evaluasi signifikansi koefisien jalur dilakukan melalui prosedur *Complete Boots
 ## 3. Ambang Batas Evaluasi Keputusan Statistik
 
 ### A. Uji Validitas & Reliabilitas (Outer Model)
-* **Outer Loading Indikator:** $\ge 0,70$
-* **Average Variance Extracted (AVE):** $\ge 0,50$
-* **Composite Reliability (CR) & Cronbach's Alpha:** $\ge 0,70$
+* **Outer Loading Indikator:** >= 0,70$
+* **Average Variance Extracted (AVE):** >= 0,50$
+* **Composite Reliability (CR) & Cronbach's Alpha:** >= 0,70$
 * **Rasio HTMT (Validitas Diskriminan):** $< 0,85$
 
 ### B. Uji Struktural & Hipotesis (Inner Model)
